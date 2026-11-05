@@ -1,0 +1,15 @@
+{
+  "name": "Chamber Lab / Plinth Lab",
+  "version": "0.8.1",
+  "github_owner": "sugawarasakumi",
+  "repository_name": "chamber-lab",
+  "publication_status": "prepared; not deployed to GitHub Pages",
+  "planned_site_url": "https://sugawarasakumi.github.io/chamber-lab/",
+  "publishing_branch": "main",
+  "publishing_folder": "/docs",
+  "source_commit": "bbf53391c22594903f6fc65b20e11be84db41c6d",
+  "website_file_count": 42,
+  "relative_module_links_checked": 67,
+  "tests": "npm test: all 17 verification programs passed in the export folder",
+  "verified_date": "2026-11-05"
+}

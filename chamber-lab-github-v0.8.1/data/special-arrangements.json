@@ -1,0 +1,586 @@
+[
+  {
+    "coefficientField": "Q(sqrt(5))",
+    "coordinateChange": {
+      "theta": "2*pi/5",
+      "sourceCoordinates": "x=X; y=sin(theta)/(cos(theta)-1)*Y; z=Z",
+      "normalScaling": "Each of the ten displayed affine forms is 2*l_i/sin(theta) after this invertible affine change.",
+      "field": "Q(sqrt(5))",
+      "embedding": "sqrt(5)>0",
+      "note": "Anisotropic affine coordinates preserve the arrangement and all incidence/topological invariants; they do not preserve the regular Euclidean pentagon metric."
+    },
+    "id": "icosidodecahedral",
+    "name": "Icosidodecahedral / 吉永の二十・十二面体配置",
+    "category": "special",
+    "tag": "Q(√5) · 射影16本 / affine15本",
+    "description": "6つの辺平面と10の対角平面からなる吉永の配置。辺平面を無限遠としてdecone。",
+    "source": "https://arxiv.org/abs/1902.06256",
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/1902.06256",
+        "location": "Section4.1, Definition4.1 and Figures2–5 (pp8–10)",
+        "role": "Primary definition: six decagonal edge-equator planes and ten planes of six pentagonal diagonals."
+      },
+      {
+        "url": "https://arxiv.org/pdf/1908.01280",
+        "location": "Section2 pp2–3; Theorem3.2 pp4–5",
+        "role": "Poincare polynomial of decone 1+15t+60t^2; K(pi,1) theorem."
+      },
+      {
+        "url": "https://arxiv.org/pdf/2409.04032",
+        "location": "Section2 p6",
+        "role": "Exact double-star equations used to put both arrangements in one coordinate system."
+      }
+    ],
+    "projectiveNormals": [
+      [
+        "-3+sqrt(5)",
+        "1+sqrt(5)",
+        "3+sqrt(5)"
+      ],
+      [
+        "-2",
+        "2",
+        "-3-sqrt(5)"
+      ],
+      [
+        "-2+2*sqrt(5)",
+        "0",
+        "-3-sqrt(5)"
+      ],
+      [
+        "2",
+        "2",
+        "3+sqrt(5)"
+      ],
+      [
+        "3-sqrt(5)",
+        "1+sqrt(5)",
+        "-3-sqrt(5)"
+      ],
+      [
+        "-3+sqrt(5)",
+        "1+sqrt(5)",
+        "3-sqrt(5)"
+      ],
+      [
+        "-2",
+        "2",
+        "-3+sqrt(5)"
+      ],
+      [
+        "-2+2*sqrt(5)",
+        "0",
+        "-3+sqrt(5)"
+      ],
+      [
+        "2",
+        "2",
+        "3-sqrt(5)"
+      ],
+      [
+        "3-sqrt(5)",
+        "1+sqrt(5)",
+        "-3+sqrt(5)"
+      ],
+      [
+        "-3+sqrt(5)",
+        "1+sqrt(5)",
+        "-2"
+      ],
+      [
+        "-2",
+        "2",
+        "2"
+      ],
+      [
+        "-2+2*sqrt(5)",
+        "0",
+        "2"
+      ],
+      [
+        "2",
+        "2",
+        "-2"
+      ],
+      [
+        "3-sqrt(5)",
+        "1+sqrt(5)",
+        "2"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "deconeIndex": 15,
+    "lineOrderNote": "Indices0–4 are the additional diagonal planes,5–9 are Liu–Xie l1–l5,10–14 are Liu–Xie l6–l10, and15 is the edge plane at infinity. This labels the groups but does not claim the individual H_i numbering from earlier figures.",
+    "planeClasses": {
+      "diagonal": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "edge": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "subarrangements": [
+      {
+        "id": "double-star",
+        "projectiveIndices": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "affineIndices": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      }
+    ],
+    "expected": {
+      "t": {
+        "2": 30,
+        "4": 15
+      },
+      "regions": 152,
+      "finiteCounts": {
+        "2": 30,
+        "4": 10
+      },
+      "infinityCounts": {
+        "4": 5
+      },
+      "characteristic": [
+        1,
+        -15,
+        60
+      ],
+      "coneCharacteristic": [
+        1,
+        -16,
+        75,
+        -60
+      ],
+      "chambers": 76,
+      "boundedChambers": 46,
+      "unboundedChambers": 30,
+      "betti": [
+        1,
+        15,
+        60
+      ],
+      "projectivePoints": 45,
+      "simplicial": false
+    },
+    "knownKpi": {
+      "value": "YES",
+      "reference": "Ye Liu (2019), Theorem3.2: a nonuniform Falk weight certificate",
+      "source": "https://arxiv.org/abs/1908.01280"
+    },
+    "verification": {
+      "arithmetic": "Exact Fraction pairs a+b*sqrt(5), sqrt(5)^2=5; no floating point incidence decisions.",
+      "projectivePairCount": 120,
+      "sumRankTwoMobius": 75,
+      "geometricConstruction": "Take the 30 midpoints of the 30 edges of the standard icosahedron. Each of six edge-plane normals below has10 midpoints and exactly a decagonal edge cycle. Each of ten diagonal-plane normals has6 midpoints and exactly a cycle of6 pentagonal diagonals. All tests used exact dot products and squared distances.",
+      "symmetricProjectiveNormals": [
+        [
+          "0",
+          "1",
+          "1/2+1/2*sqrt(5)"
+        ],
+        [
+          "1",
+          "1/2+1/2*sqrt(5)",
+          "0"
+        ],
+        [
+          "1/2+1/2*sqrt(5)",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "-1/2-1/2*sqrt(5)"
+        ],
+        [
+          "1",
+          "-1/2-1/2*sqrt(5)",
+          "0"
+        ],
+        [
+          "-1/2-1/2*sqrt(5)",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "1/2+1/2*sqrt(5)",
+          "-1/2+1/2*sqrt(5)"
+        ],
+        [
+          "1/2+1/2*sqrt(5)",
+          "-1/2+1/2*sqrt(5)",
+          "0"
+        ],
+        [
+          "-1/2+1/2*sqrt(5)",
+          "0",
+          "1/2+1/2*sqrt(5)"
+        ],
+        [
+          "0",
+          "1/2+1/2*sqrt(5)",
+          "1/2-1/2*sqrt(5)"
+        ],
+        [
+          "1/2+1/2*sqrt(5)",
+          "1/2-1/2*sqrt(5)",
+          "0"
+        ],
+        [
+          "1/2-1/2*sqrt(5)",
+          "0",
+          "1/2+1/2*sqrt(5)"
+        ],
+        [
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "symmetricNormalClasses": {
+        "edge": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "diagonal": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "normalTransformConvention": "Column vector n is a symmetric normal; M*n is proportional to the listed projective normal. M is nonsingular. Equivalently old point coordinates equal transpose(M) times new point coordinates.",
+      "normalTransformMatrix": [
+        [
+          "5-5*sqrt(5)",
+          "5-3*sqrt(5)",
+          "-10+4*sqrt(5)"
+        ],
+        [
+          "-5+sqrt(5)",
+          "5+sqrt(5)",
+          "2*sqrt(5)"
+        ],
+        [
+          "0",
+          "10-2*sqrt(5)",
+          "-4*sqrt(5)"
+        ]
+      ],
+      "transformedNormalIndices": [
+        10,
+        11,
+        12,
+        15,
+        14,
+        13,
+        5,
+        7,
+        1,
+        0,
+        8,
+        4,
+        6,
+        2,
+        3,
+        9
+      ]
+    }
+  },
+  {
+    "coefficientField": "Q(sqrt(5))",
+    "coordinateChange": {
+      "theta": "2*pi/5",
+      "sourceCoordinates": "x=X; y=sin(theta)/(cos(theta)-1)*Y; z=Z",
+      "normalScaling": "Each of the ten displayed affine forms is 2*l_i/sin(theta) after this invertible affine change.",
+      "field": "Q(sqrt(5))",
+      "embedding": "sqrt(5)>0",
+      "note": "Anisotropic affine coordinates preserve the arrangement and all incidence/topological invariants; they do not preserve the regular Euclidean pentagon metric."
+    },
+    "id": "double-star",
+    "name": "Double star / 二重星型配置",
+    "category": "special",
+    "tag": "Q(√5) · 射影11本 / affine10本",
+    "description": "Ishibashi–Sugawara–Yoshinagaの10直線配置。icosidodecahedral deconeの部分配置。",
+    "source": "https://arxiv.org/abs/2409.04032",
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/2209.02236",
+        "location": "Example3.2 p7; Figure2",
+        "role": "Original ten-affine-line double star and its double-cover torsion."
+      },
+      {
+        "url": "https://arxiv.org/pdf/2409.04032",
+        "location": "Section2 p6; Theorem2.1 p7",
+        "role": "Explicit ten defining forms; eleven projective lines including infinity; translated characteristic component not arising from a pointed multinet."
+      }
+    ],
+    "projectiveNormals": [
+      [
+        "-3+sqrt(5)",
+        "1+sqrt(5)",
+        "3-sqrt(5)"
+      ],
+      [
+        "-2",
+        "2",
+        "-3+sqrt(5)"
+      ],
+      [
+        "-2+2*sqrt(5)",
+        "0",
+        "-3+sqrt(5)"
+      ],
+      [
+        "2",
+        "2",
+        "3-sqrt(5)"
+      ],
+      [
+        "3-sqrt(5)",
+        "1+sqrt(5)",
+        "-3+sqrt(5)"
+      ],
+      [
+        "-3+sqrt(5)",
+        "1+sqrt(5)",
+        "-2"
+      ],
+      [
+        "-2",
+        "2",
+        "2"
+      ],
+      [
+        "-2+2*sqrt(5)",
+        "0",
+        "2"
+      ],
+      [
+        "2",
+        "2",
+        "-2"
+      ],
+      [
+        "3-sqrt(5)",
+        "1+sqrt(5)",
+        "2"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "deconeIndex": 10,
+    "lineOrderNote": "Affine rows0–9 are exactly Liu–Xie l1–l10 after the coordinate change and nonzero row scaling. Index10 is z=0.",
+    "planeClasses": {
+      "diagonal": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "edge": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    "parentArrangement": {
+      "id": "icosidodecahedral",
+      "projectiveIndices": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "affineIndices": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    "expected": {
+      "t": {
+        "2": 10,
+        "3": 5,
+        "4": 5
+      },
+      "regions": 72,
+      "finiteCounts": {
+        "2": 10,
+        "4": 5
+      },
+      "infinityCounts": {
+        "3": 5
+      },
+      "characteristic": [
+        1,
+        -10,
+        25
+      ],
+      "coneCharacteristic": [
+        1,
+        -11,
+        35,
+        -25
+      ],
+      "chambers": 36,
+      "boundedChambers": 16,
+      "unboundedChambers": 20,
+      "betti": [
+        1,
+        10,
+        25
+      ],
+      "projectivePoints": 20,
+      "simplicial": false
+    },
+    "publishedFacts": {
+      "translatedCharacteristicComponent": {
+        "dimension": 1,
+        "rho": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "torusExponents": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "source": "https://arxiv.org/pdf/2409.04032",
+        "location": "Theorem2.1, p7",
+        "note": "This is one translated component, not a claimed full decomposition. Coordinates follow the ten affine rows. The component is not produced by a pointed multinet."
+      },
+      "doubleCoverFirstHomology": {
+        "freeRank": 10,
+        "torsion": [
+          2
+        ],
+        "monodromy": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "source": "https://arxiv.org/pdf/2209.02236",
+        "location": "Example3.2, p7, computation reported by authors",
+        "note": "This is the double cover of the ten-line complement, not the Milnor fiber of the eleven-plane cone."
+      }
+    },
+    "verification": {
+      "arithmetic": "Exact Fraction pairs a+b*sqrt(5), sqrt(5)^2=5; no floating point incidence decisions.",
+      "projectivePairCount": 55,
+      "sumRankTwoMobius": 35,
+      "definitionCheck": "theta=2*pi/5, cos(theta)=(sqrt(5)-1)/4, cos(2theta)=-(sqrt(5)+1)/4, sin(2theta)/sin(theta)=(sqrt(5)-1)/2. Substitution gives every listed row exactly."
+    }
+  }
+]

@@ -1,0 +1,4258 @@
+[
+  {
+    "id": "cel-10-60-3",
+    "name": "Grünbaum A(10,1)",
+    "grunbaumLabel": [
+      10,
+      1
+    ],
+    "celKey": [
+      10,
+      60,
+      3
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u10_1",
+      "symbol": "u10_1",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "1 + 2*u10_1",
+        "u10_1",
+        "2*u10_1"
+      ],
+      [
+        "2 + 2*u10_1",
+        "1 + u10_1",
+        "1 + 2*u10_1"
+      ],
+      [
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1 + u10_1",
+        "u10_1",
+        "1 + u10_1"
+      ],
+      [
+        "2*u10_1",
+        "u10_1",
+        "2*u10_1"
+      ],
+      [
+        "1 + u10_1",
+        "1",
+        "1 + u10_1"
+      ],
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1 + u10_1",
+        "u10_1",
+        "u10_1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      2,
+      1
+    ],
+    "deconeIndex": 7,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 5,
+        "3": 10,
+        "5": 1
+      },
+      "regions": 60,
+      "projectiveFVector": [
+        16,
+        45,
+        30
+      ],
+      "characteristicRoots": [
+        1,
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "id": "cel-13-104-1",
+    "name": "Grünbaum A(13,4)",
+    "grunbaumLabel": [
+      13,
+      4
+    ],
+    "celKey": [
+      13,
+      104,
+      1
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u13_4",
+      "symbol": "u13_4",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "2 + 2*u13_4",
+        "1 + u13_4",
+        "2 + u13_4"
+      ],
+      [
+        "2 + 4*u13_4",
+        "1 + u13_4",
+        "1 + 3*u13_4"
+      ],
+      [
+        "2 + 2*u13_4",
+        "1",
+        "2 + u13_4"
+      ],
+      [
+        "1 + 3*u13_4",
+        "u13_4",
+        "1 + 2*u13_4"
+      ],
+      [
+        "1 + 2*u13_4",
+        "u13_4",
+        "2*u13_4"
+      ],
+      [
+        "2 + 2*u13_4",
+        "u13_4",
+        "1 + 2*u13_4"
+      ],
+      [
+        "2*u13_4",
+        "u13_4",
+        "2*u13_4"
+      ],
+      [
+        "1 + u13_4",
+        "1",
+        "1 + u13_4"
+      ],
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1 + u13_4",
+        "0",
+        "1"
+      ],
+      [
+        "2 + 2*u13_4",
+        "1",
+        "1 + u13_4"
+      ],
+      [
+        "1 + 3*u13_4",
+        "u13_4",
+        "2*u13_4"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      2,
+      1
+    ],
+    "deconeIndex": 9,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 6,
+        "3": 18,
+        "4": 3
+      },
+      "regions": 104,
+      "projectiveFVector": [
+        27,
+        78,
+        52
+      ],
+      "characteristicRoots": []
+    }
+  },
+  {
+    "id": "cel-14-112-2",
+    "name": "Grünbaum A(14,1)",
+    "grunbaumLabel": [
+      14,
+      1
+    ],
+    "celKey": [
+      14,
+      112,
+      2
+    ],
+    "field": {
+      "label": "Q(2cos(2π/7))",
+      "polynomial": [
+        "-1",
+        "-2",
+        "1",
+        "1"
+      ],
+      "interval": [
+        "1246/1000",
+        "1247/1000"
+      ],
+      "id": "u14_1",
+      "symbol": "u14_1",
+      "sourceGenerator": "r7",
+      "degree": 3
+    },
+    "projectiveNormals": [
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "-1"
+      ],
+      [
+        "1",
+        "0",
+        "-u14_1 - u14_1^2"
+      ],
+      [
+        "1",
+        "0",
+        "u14_1"
+      ],
+      [
+        "1",
+        "0",
+        "1 - u14_1^2"
+      ],
+      [
+        "1",
+        "0",
+        "-u14_1^2"
+      ],
+      [
+        "1",
+        "-1",
+        "1"
+      ],
+      [
+        "0",
+        "-1",
+        "1"
+      ],
+      [
+        "1",
+        "-2 + u14_1 + u14_1^2",
+        "1 - u14_1 - u14_1^2"
+      ],
+      [
+        "1",
+        "-1 + u14_1^2",
+        "1 - 2*u14_1^2"
+      ],
+      [
+        "1",
+        "-2 + u14_1 + u14_1^2",
+        "2 - 2*u14_1 - 2*u14_1^2"
+      ],
+      [
+        "0",
+        "-9/7 + 2/7*u14_1 + 3/7*u14_1^2",
+        "1"
+      ],
+      [
+        "1",
+        "-1",
+        "1 + u14_1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      2,
+      1
+    ],
+    "deconeIndex": 0,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 7,
+        "3": 21,
+        "7": 1
+      },
+      "regions": 112,
+      "projectiveFVector": [
+        29,
+        84,
+        56
+      ],
+      "characteristicRoots": [
+        1,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "id": "cel-14-112-3",
+    "name": "Grünbaum A(14,4)",
+    "grunbaumLabel": [
+      14,
+      4
+    ],
+    "celKey": [
+      14,
+      112,
+      3
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u14_4",
+      "symbol": "u14_4",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "1 + u14_4",
+        "u14_4",
+        "0"
+      ],
+      [
+        "1 + 2*u14_4",
+        "2*u14_4",
+        "u14_4"
+      ],
+      [
+        "2 + 2*u14_4",
+        "1 + 2*u14_4",
+        "1 + u14_4"
+      ],
+      [
+        "2 + 2*u14_4",
+        "1 + 2*u14_4",
+        "u14_4"
+      ],
+      [
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1 + u14_4",
+        "1 + u14_4",
+        "u14_4"
+      ],
+      [
+        "2*u14_4",
+        "2*u14_4",
+        "u14_4"
+      ],
+      [
+        "1 + u14_4",
+        "1 + u14_4",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1 + u14_4",
+        "u14_4",
+        "u14_4"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 9,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 10,
+        "3": 14,
+        "4": 4,
+        "6": 1
+      },
+      "regions": 112,
+      "projectiveFVector": [
+        29,
+        84,
+        56
+      ],
+      "characteristicRoots": [
+        1,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "id": "cel-14-116-1",
+    "name": "Grünbaum A(14,3)",
+    "grunbaumLabel": [
+      14,
+      3
+    ],
+    "celKey": [
+      14,
+      116,
+      1
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u14_3",
+      "symbol": "u14_3",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "2 + 2*u14_3",
+        "1 + u14_3",
+        "2 + u14_3"
+      ],
+      [
+        "2 + 4*u14_3",
+        "1 + u14_3",
+        "1 + 3*u14_3"
+      ],
+      [
+        "2 + 2*u14_3",
+        "1",
+        "2 + u14_3"
+      ],
+      [
+        "1 + 3*u14_3",
+        "u14_3",
+        "1 + 2*u14_3"
+      ],
+      [
+        "1 + 2*u14_3",
+        "u14_3",
+        "2*u14_3"
+      ],
+      [
+        "2 + 2*u14_3",
+        "u14_3",
+        "1 + 2*u14_3"
+      ],
+      [
+        "2*u14_3",
+        "u14_3",
+        "2*u14_3"
+      ],
+      [
+        "1 + u14_3",
+        "1",
+        "1 + u14_3"
+      ],
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1 + u14_3",
+        "0",
+        "1"
+      ],
+      [
+        "2 + 2*u14_3",
+        "1",
+        "1 + u14_3"
+      ],
+      [
+        "1 + 3*u14_3",
+        "u14_3",
+        "2*u14_3"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      2,
+      1
+    ],
+    "deconeIndex": 9,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 9,
+        "3": 16,
+        "4": 4,
+        "5": 1
+      },
+      "regions": 116,
+      "projectiveFVector": [
+        30,
+        87,
+        58
+      ],
+      "characteristicRoots": []
+    }
+  },
+  {
+    "id": "cel-15-120-1",
+    "name": "Grünbaum A(15,1)",
+    "grunbaumLabel": [
+      15,
+      1
+    ],
+    "celKey": [
+      15,
+      120,
+      1
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u15_1",
+      "symbol": "u15_1",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "1 + 2*u15_1",
+        "u15_1",
+        "1 + u15_1"
+      ],
+      [
+        "2 + 2*u15_1",
+        "1 + u15_1",
+        "2 + u15_1"
+      ],
+      [
+        "1 + 3*u15_1",
+        "1 + u15_1",
+        "1 + 2*u15_1"
+      ],
+      [
+        "1 + 2*u15_1",
+        "u15_1",
+        "2*u15_1"
+      ],
+      [
+        "2 + 2*u15_1",
+        "1 + u15_1",
+        "1 + 2*u15_1"
+      ],
+      [
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1 + u15_1",
+        "u15_1",
+        "1 + u15_1"
+      ],
+      [
+        "2*u15_1",
+        "u15_1",
+        "2*u15_1"
+      ],
+      [
+        "1 + u15_1",
+        "1",
+        "1 + u15_1"
+      ],
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1 + u15_1",
+        "1",
+        "1"
+      ],
+      [
+        "2*u15_1",
+        "u15_1",
+        "u15_1"
+      ],
+      [
+        "1 + u15_1",
+        "u15_1",
+        "u15_1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      2,
+      1
+    ],
+    "deconeIndex": 10,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 15,
+        "3": 10,
+        "5": 6
+      },
+      "regions": 120,
+      "projectiveFVector": [
+        31,
+        90,
+        60
+      ],
+      "characteristicRoots": [
+        1,
+        5,
+        9
+      ]
+    }
+  },
+  {
+    "id": "cel-15-128-2",
+    "name": "Grünbaum A(15,4)",
+    "grunbaumLabel": [
+      15,
+      4
+    ],
+    "celKey": [
+      15,
+      128,
+      2
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u15_4",
+      "symbol": "u15_4",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "1 + 2*u15_4",
+        "1",
+        "1 + u15_4"
+      ],
+      [
+        "2 + 2*u15_4",
+        "1 + u15_4",
+        "2 + u15_4"
+      ],
+      [
+        "2 + 4*u15_4",
+        "1 + u15_4",
+        "1 + 3*u15_4"
+      ],
+      [
+        "2 + 2*u15_4",
+        "1",
+        "2 + u15_4"
+      ],
+      [
+        "1 + 3*u15_4",
+        "u15_4",
+        "1 + 2*u15_4"
+      ],
+      [
+        "1 + 2*u15_4",
+        "u15_4",
+        "2*u15_4"
+      ],
+      [
+        "2 + 2*u15_4",
+        "u15_4",
+        "1 + 2*u15_4"
+      ],
+      [
+        "2*u15_4",
+        "u15_4",
+        "2*u15_4"
+      ],
+      [
+        "1 + u15_4",
+        "1",
+        "1 + u15_4"
+      ],
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1 + u15_4",
+        "0",
+        "1"
+      ],
+      [
+        "2 + 2*u15_4",
+        "1",
+        "1 + u15_4"
+      ],
+      [
+        "1 + 3*u15_4",
+        "u15_4",
+        "2*u15_4"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      2,
+      1
+    ],
+    "deconeIndex": 10,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 12,
+        "3": 14,
+        "4": 6,
+        "6": 1
+      },
+      "regions": 128,
+      "projectiveFVector": [
+        33,
+        96,
+        64
+      ],
+      "characteristicRoots": [
+        1,
+        7,
+        7
+      ]
+    }
+  },
+  {
+    "id": "cel-15-132-1",
+    "name": "Grünbaum A(15,5)",
+    "grunbaumLabel": [
+      15,
+      5
+    ],
+    "celKey": [
+      15,
+      132,
+      1
+    ],
+    "field": {
+      "label": "Q(ρ), ρ³−3ρ−25=0",
+      "polynomial": [
+        "-25",
+        "-3",
+        "0",
+        "1"
+      ],
+      "interval": [
+        "3264/1000",
+        "3265/1000"
+      ],
+      "id": "u15_5",
+      "symbol": "u15_5",
+      "sourceGenerator": "rho",
+      "degree": 3
+    },
+    "projectiveNormals": [
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "-8/9 - 2/9*u15_5 + 1/9*u15_5^2"
+      ],
+      [
+        "1",
+        "-1",
+        "-1"
+      ],
+      [
+        "1",
+        "-1",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "-1"
+      ],
+      [
+        "1",
+        "-13/9 - 4/9*u15_5 - 1/9*u15_5^2",
+        "-1"
+      ],
+      [
+        "1",
+        "4/9 + 4/9*u15_5 + 1/9*u15_5^2",
+        "-13/9 - 4/9*u15_5 - 1/9*u15_5^2"
+      ],
+      [
+        "1",
+        "0",
+        "-17/9 - 2/9*u15_5 + 1/9*u15_5^2"
+      ],
+      [
+        "1",
+        "-13/9 - 4/9*u15_5 - 1/9*u15_5^2",
+        "-2/9 + 1/9*u15_5 + 1/9*u15_5^2"
+      ],
+      [
+        "1",
+        "4/9 + 4/9*u15_5 + 1/9*u15_5^2",
+        "-5/3 - 1/3*u15_5"
+      ],
+      [
+        "1",
+        "4/9 + 4/9*u15_5 + 1/9*u15_5^2",
+        "-2/3 - 1/3*u15_5"
+      ],
+      [
+        "1",
+        "-7/9 - 1/9*u15_5 - 1/9*u15_5^2",
+        "-8/9 - 2/9*u15_5 + 1/9*u15_5^2"
+      ],
+      [
+        "0",
+        "1",
+        "-20/9 + 1/9*u15_5 + 1/9*u15_5^2"
+      ],
+      [
+        "1",
+        "4/9 + 4/9*u15_5 + 1/9*u15_5^2",
+        "-19/9 - 7/9*u15_5 - 1/9*u15_5^2"
+      ],
+      [
+        "1",
+        "-7/9 - 1/9*u15_5 - 1/9*u15_5^2",
+        "1/9 - 2/9*u15_5 + 1/9*u15_5^2"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 0,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 9,
+        "3": 22,
+        "5": 3
+      },
+      "regions": 132,
+      "projectiveFVector": [
+        34,
+        99,
+        66
+      ],
+      "characteristicRoots": []
+    }
+  },
+  {
+    "id": "cel-15-132-2",
+    "name": "Grünbaum A(15,3)",
+    "grunbaumLabel": [
+      15,
+      3
+    ],
+    "celKey": [
+      15,
+      132,
+      2
+    ],
+    "field": null,
+    "projectiveNormals": [
+      [
+        "1",
+        "3",
+        "1"
+      ],
+      [
+        "1",
+        "4",
+        "2"
+      ],
+      [
+        "1",
+        "2",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "3",
+        "2"
+      ],
+      [
+        "2",
+        "4",
+        "3"
+      ],
+      [
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "4",
+        "3"
+      ],
+      [
+        "1",
+        "2",
+        "2"
+      ],
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "2"
+      ],
+      [
+        "0",
+        "2",
+        "1"
+      ],
+      [
+        "0",
+        "3",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      2,
+      1
+    ],
+    "deconeIndex": 13,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 12,
+        "3": 13,
+        "4": 9
+      },
+      "regions": 132,
+      "projectiveFVector": [
+        34,
+        99,
+        66
+      ],
+      "characteristicRoots": []
+    }
+  },
+  {
+    "id": "cel-16-140-1",
+    "name": "Grünbaum A(16,4)",
+    "grunbaumLabel": [
+      16,
+      4
+    ],
+    "celKey": [
+      16,
+      140,
+      1
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u16_4",
+      "symbol": "u16_4",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "1 + 2*u16_4",
+        "u16_4",
+        "1 + u16_4"
+      ],
+      [
+        "1 + 2*u16_4",
+        "1",
+        "1 + u16_4"
+      ],
+      [
+        "2 + 2*u16_4",
+        "1 + u16_4",
+        "2 + u16_4"
+      ],
+      [
+        "1 + 3*u16_4",
+        "1 + u16_4",
+        "1 + 2*u16_4"
+      ],
+      [
+        "1 + 2*u16_4",
+        "u16_4",
+        "2*u16_4"
+      ],
+      [
+        "2 + 2*u16_4",
+        "1 + u16_4",
+        "1 + 2*u16_4"
+      ],
+      [
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1 + u16_4",
+        "u16_4",
+        "1 + u16_4"
+      ],
+      [
+        "2*u16_4",
+        "u16_4",
+        "2*u16_4"
+      ],
+      [
+        "1 + u16_4",
+        "1",
+        "1 + u16_4"
+      ],
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1 + u16_4",
+        "1",
+        "1"
+      ],
+      [
+        "2*u16_4",
+        "u16_4",
+        "u16_4"
+      ],
+      [
+        "1 + u16_4",
+        "u16_4",
+        "u16_4"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      2,
+      1
+    ],
+    "deconeIndex": 11,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 15,
+        "3": 15,
+        "5": 6
+      },
+      "regions": 140,
+      "projectiveFVector": [
+        36,
+        105,
+        70
+      ],
+      "characteristicRoots": [
+        1,
+        6,
+        9
+      ]
+    }
+  },
+  {
+    "id": "cel-16-144-3",
+    "name": "Grünbaum A(16,1)",
+    "grunbaumLabel": [
+      16,
+      1
+    ],
+    "celKey": [
+      16,
+      144,
+      3
+    ],
+    "field": {
+      "label": "Q(√2)",
+      "polynomial": [
+        "-2",
+        "0",
+        "1"
+      ],
+      "interval": [
+        "1414/1000",
+        "1415/1000"
+      ],
+      "id": "u16_1",
+      "symbol": "u16_1",
+      "sourceGenerator": "sqrt2",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "-1"
+      ],
+      [
+        "0",
+        "1",
+        "-1 - 1/2*u16_1"
+      ],
+      [
+        "0",
+        "1",
+        "-1 - u16_1"
+      ],
+      [
+        "0",
+        "1",
+        "-2 - u16_1"
+      ],
+      [
+        "0",
+        "1",
+        "-3 - 2*u16_1"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "1 + u16_1"
+      ],
+      [
+        "1",
+        "-1",
+        "-1"
+      ],
+      [
+        "1",
+        "-u16_1",
+        "-1"
+      ],
+      [
+        "1",
+        "-1",
+        "0"
+      ],
+      [
+        "1",
+        "-2",
+        "0"
+      ],
+      [
+        "1",
+        "-u16_1",
+        "u16_1"
+      ],
+      [
+        "1",
+        "-1 - u16_1",
+        "u16_1"
+      ],
+      [
+        "1",
+        "-2",
+        "1 + u16_1"
+      ],
+      [
+        "1",
+        "-1 - u16_1",
+        "1 + u16_1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 6,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 8,
+        "3": 28,
+        "8": 1
+      },
+      "regions": 144,
+      "projectiveFVector": [
+        37,
+        108,
+        72
+      ],
+      "characteristicRoots": [
+        1,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "id": "cel-16-144-5",
+    "name": "Grünbaum A(16,5)",
+    "grunbaumLabel": [
+      16,
+      5
+    ],
+    "celKey": [
+      16,
+      144,
+      5
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u16_5",
+      "symbol": "u16_5",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "1 + 2*u16_5",
+        "1 + u16_5",
+        "u16_5"
+      ],
+      [
+        "2 + 4*u16_5",
+        "2 + 2*u16_5",
+        "1 + u16_5"
+      ],
+      [
+        "2 + 2*u16_5",
+        "2 + u16_5",
+        "1 + u16_5"
+      ],
+      [
+        "2 + 4*u16_5",
+        "1 + 3*u16_5",
+        "2*u16_5"
+      ],
+      [
+        "2 + 4*u16_5",
+        "1 + 3*u16_5",
+        "1 + u16_5"
+      ],
+      [
+        "2 + 2*u16_5",
+        "2 + u16_5",
+        "1"
+      ],
+      [
+        "1 + 2*u16_5",
+        "2*u16_5",
+        "u16_5"
+      ],
+      [
+        "2 + 2*u16_5",
+        "1 + 2*u16_5",
+        "1 + u16_5"
+      ],
+      [
+        "2 + 2*u16_5",
+        "1 + 2*u16_5",
+        "u16_5"
+      ],
+      [
+        "2*u16_5",
+        "2*u16_5",
+        "u16_5"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "2*u16_5",
+        "u16_5",
+        "u16_5"
+      ],
+      [
+        "2 + 2*u16_5",
+        "1 + u16_5",
+        "u16_5"
+      ],
+      [
+        "2 + 2*u16_5",
+        "1 + u16_5",
+        "1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 10,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 14,
+        "3": 16,
+        "4": 3,
+        "5": 4
+      },
+      "regions": 144,
+      "projectiveFVector": [
+        37,
+        108,
+        72
+      ],
+      "characteristicRoots": [
+        1,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "id": "cel-17-160-4",
+    "name": "Grünbaum A(17,1)",
+    "grunbaumLabel": [
+      17,
+      1
+    ],
+    "celKey": [
+      17,
+      160,
+      4
+    ],
+    "field": {
+      "label": "Q(√2)",
+      "polynomial": [
+        "-2",
+        "0",
+        "1"
+      ],
+      "interval": [
+        "1414/1000",
+        "1415/1000"
+      ],
+      "id": "u17_1",
+      "symbol": "u17_1",
+      "sourceGenerator": "sqrt2",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "-1"
+      ],
+      [
+        "0",
+        "1",
+        "-1 - 1/2*u17_1"
+      ],
+      [
+        "0",
+        "1",
+        "-1 - u17_1"
+      ],
+      [
+        "0",
+        "1",
+        "-2 - u17_1"
+      ],
+      [
+        "0",
+        "1",
+        "-3 - 2*u17_1"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "1 + u17_1"
+      ],
+      [
+        "1",
+        "-1",
+        "-1"
+      ],
+      [
+        "1",
+        "-u17_1",
+        "-1"
+      ],
+      [
+        "1",
+        "-1",
+        "0"
+      ],
+      [
+        "1",
+        "-2",
+        "0"
+      ],
+      [
+        "1",
+        "-1 - 1/2*u17_1",
+        "1/2*u17_1"
+      ],
+      [
+        "1",
+        "-u17_1",
+        "u17_1"
+      ],
+      [
+        "1",
+        "-1 - u17_1",
+        "u17_1"
+      ],
+      [
+        "1",
+        "-2",
+        "1 + u17_1"
+      ],
+      [
+        "1",
+        "-1 - u17_1",
+        "1 + u17_1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 6,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 12,
+        "3": 24,
+        "4": 4,
+        "8": 1
+      },
+      "regions": 160,
+      "projectiveFVector": [
+        41,
+        120,
+        80
+      ],
+      "characteristicRoots": [
+        1,
+        7,
+        9
+      ]
+    }
+  },
+  {
+    "id": "cel-17-160-5",
+    "name": "Grünbaum A(17,5)",
+    "grunbaumLabel": [
+      17,
+      5
+    ],
+    "celKey": [
+      17,
+      160,
+      5
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u17_5",
+      "symbol": "u17_5",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "2*u17_5",
+        "u17_5",
+        "0"
+      ],
+      [
+        "2 + 4*u17_5",
+        "2 + 2*u17_5",
+        "1 + u17_5"
+      ],
+      [
+        "2 + 2*u17_5",
+        "2 + u17_5",
+        "1 + u17_5"
+      ],
+      [
+        "2 + 4*u17_5",
+        "1 + 3*u17_5",
+        "2*u17_5"
+      ],
+      [
+        "2 + 4*u17_5",
+        "1 + 3*u17_5",
+        "1 + u17_5"
+      ],
+      [
+        "2 + 2*u17_5",
+        "2 + u17_5",
+        "1"
+      ],
+      [
+        "2 + 2*u17_5",
+        "1 + 2*u17_5",
+        "1 + u17_5"
+      ],
+      [
+        "2 + 2*u17_5",
+        "1 + 2*u17_5",
+        "u17_5"
+      ],
+      [
+        "2*u17_5",
+        "2*u17_5",
+        "u17_5"
+      ],
+      [
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "2*u17_5",
+        "u17_5",
+        "u17_5"
+      ],
+      [
+        "2 + 2*u17_5",
+        "1 + u17_5",
+        "u17_5"
+      ],
+      [
+        "2 + 2*u17_5",
+        "1 + u17_5",
+        "1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 10,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 16,
+        "3": 18,
+        "4": 1,
+        "5": 6
+      },
+      "regions": 160,
+      "projectiveFVector": [
+        41,
+        120,
+        80
+      ],
+      "characteristicRoots": [
+        1,
+        7,
+        9
+      ]
+    }
+  },
+  {
+    "id": "cel-17-168-1",
+    "name": "Grünbaum A(17,8)",
+    "grunbaumLabel": [
+      17,
+      8
+    ],
+    "celKey": [
+      17,
+      168,
+      1
+    ],
+    "field": {
+      "label": "Q(√2)",
+      "polynomial": [
+        "-2",
+        "0",
+        "1"
+      ],
+      "interval": [
+        "1414/1000",
+        "1415/1000"
+      ],
+      "id": "u17_8",
+      "symbol": "u17_8",
+      "sourceGenerator": "sqrt2",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "1",
+        "2 + 2*u17_8",
+        "-1 - u17_8"
+      ],
+      [
+        "1",
+        "2 + 2*u17_8",
+        "-2 - u17_8"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "-1",
+        "1"
+      ],
+      [
+        "0",
+        "-1 - 1/2*u17_8",
+        "1"
+      ],
+      [
+        "0",
+        "-3 - 2*u17_8",
+        "1"
+      ],
+      [
+        "1",
+        "-2 - u17_8",
+        "0"
+      ],
+      [
+        "1",
+        "-2 - u17_8",
+        "-1"
+      ],
+      [
+        "1",
+        "-1",
+        "-1"
+      ],
+      [
+        "1",
+        "0",
+        "-1"
+      ],
+      [
+        "1",
+        "-1",
+        "-1 - u17_8"
+      ],
+      [
+        "1",
+        "0",
+        "-2"
+      ],
+      [
+        "1",
+        "1/2*u17_8",
+        "-1 - 1/2*u17_8"
+      ],
+      [
+        "1",
+        "u17_8",
+        "-u17_8"
+      ],
+      [
+        "1",
+        "1 + u17_8",
+        "-1"
+      ],
+      [
+        "1",
+        "u17_8",
+        "-1 - u17_8"
+      ],
+      [
+        "1",
+        "1 + u17_8",
+        "-1 - u17_8"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      2,
+      1
+    ],
+    "deconeIndex": 2,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 14,
+        "3": 20,
+        "4": 7,
+        "5": 2
+      },
+      "regions": 168,
+      "projectiveFVector": [
+        43,
+        126,
+        84
+      ],
+      "characteristicRoots": []
+    }
+  },
+  {
+    "id": "cel-17-168-2",
+    "name": "Grünbaum A(17,7)",
+    "grunbaumLabel": [
+      17,
+      7
+    ],
+    "celKey": [
+      17,
+      168,
+      2
+    ],
+    "field": null,
+    "projectiveNormals": [
+      [
+        "1",
+        "-1",
+        "1"
+      ],
+      [
+        "1",
+        "-1",
+        "0"
+      ],
+      [
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "1",
+        "1",
+        "-1"
+      ],
+      [
+        "2",
+        "2",
+        "-3"
+      ],
+      [
+        "1",
+        "1",
+        "-2"
+      ],
+      [
+        "1",
+        "1",
+        "-3"
+      ],
+      [
+        "2",
+        "4",
+        "-3"
+      ],
+      [
+        "1",
+        "2",
+        "-2"
+      ],
+      [
+        "1",
+        "3",
+        "-1"
+      ],
+      [
+        "1",
+        "3",
+        "-3"
+      ],
+      [
+        "1",
+        "3",
+        "-4"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "5",
+        "-4"
+      ],
+      [
+        "0",
+        "2",
+        "-3"
+      ],
+      [
+        "0",
+        "2",
+        "-1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 12,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 13,
+        "3": 22,
+        "4": 7,
+        "6": 1
+      },
+      "regions": 168,
+      "projectiveFVector": [
+        43,
+        126,
+        84
+      ],
+      "characteristicRoots": []
+    }
+  },
+  {
+    "id": "cel-18-180-3",
+    "name": "Grünbaum A(18,1)",
+    "grunbaumLabel": [
+      18,
+      1
+    ],
+    "celKey": [
+      18,
+      180,
+      3
+    ],
+    "field": {
+      "label": "Q(2cos(2π/9))",
+      "polynomial": [
+        "1",
+        "-3",
+        "0",
+        "1"
+      ],
+      "interval": [
+        "1532/1000",
+        "1533/1000"
+      ],
+      "id": "u18_1",
+      "symbol": "u18_1",
+      "sourceGenerator": "r9",
+      "degree": 3
+    },
+    "projectiveNormals": [
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "-1"
+      ],
+      [
+        "1",
+        "0",
+        "1/3 - 1/3*u18_1 - 2/3*u18_1^2"
+      ],
+      [
+        "1",
+        "0",
+        "-u18_1 - u18_1^2"
+      ],
+      [
+        "1",
+        "0",
+        "u18_1"
+      ],
+      [
+        "1",
+        "0",
+        "-1/3 + 1/3*u18_1 - 1/3*u18_1^2"
+      ],
+      [
+        "1",
+        "0",
+        "1 - u18_1^2"
+      ],
+      [
+        "1",
+        "0",
+        "-u18_1^2"
+      ],
+      [
+        "1",
+        "-1",
+        "1"
+      ],
+      [
+        "0",
+        "-1",
+        "1"
+      ],
+      [
+        "1",
+        "3 - u18_1^2",
+        "-4 + u18_1^2"
+      ],
+      [
+        "1",
+        "-2 + u18_1^2",
+        "3 - 2*u18_1^2"
+      ],
+      [
+        "1",
+        "-1 + 1/3*u18_1 + 1/3*u18_1^2",
+        "4/3 - 2/3*u18_1 - u18_1^2"
+      ],
+      [
+        "1",
+        "-2 + u18_1^2",
+        "2 - 2*u18_1^2"
+      ],
+      [
+        "1",
+        "3 - u18_1^2",
+        "-3 - u18_1"
+      ],
+      [
+        "0",
+        "-14/19 + 2/19*u18_1 + 3/19*u18_1^2",
+        "1"
+      ],
+      [
+        "1",
+        "-1",
+        "1 + u18_1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      2,
+      1
+    ],
+    "deconeIndex": 0,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 9,
+        "3": 36,
+        "9": 1
+      },
+      "regions": 180,
+      "projectiveFVector": [
+        46,
+        135,
+        90
+      ],
+      "characteristicRoots": [
+        1,
+        8,
+        9
+      ]
+    }
+  },
+  {
+    "id": "cel-18-180-4",
+    "name": "Grünbaum A(18,2)",
+    "grunbaumLabel": [
+      18,
+      2
+    ],
+    "celKey": [
+      18,
+      180,
+      4
+    ],
+    "field": null,
+    "projectiveNormals": [
+      [
+        "1",
+        "4",
+        "2"
+      ],
+      [
+        "2",
+        "6",
+        "3"
+      ],
+      [
+        "1",
+        "2",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "3",
+        "2"
+      ],
+      [
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "2",
+        "2"
+      ],
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "2",
+        "1"
+      ],
+      [
+        "0",
+        "3",
+        "1"
+      ],
+      [
+        "0",
+        "4",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "6",
+        "2"
+      ],
+      [
+        "1",
+        "4",
+        "1"
+      ],
+      [
+        "1",
+        "5",
+        "2"
+      ],
+      [
+        "1",
+        "6",
+        "3"
+      ],
+      [
+        "1",
+        "3",
+        "1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      2,
+      1
+    ],
+    "deconeIndex": 11,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 18,
+        "3": 18,
+        "4": 6,
+        "5": 3,
+        "6": 1
+      },
+      "regions": 180,
+      "projectiveFVector": [
+        46,
+        135,
+        90
+      ],
+      "characteristicRoots": [
+        1,
+        8,
+        9
+      ]
+    }
+  },
+  {
+    "id": "cel-18-180-5",
+    "name": "Grünbaum A(18,5)",
+    "grunbaumLabel": [
+      18,
+      5
+    ],
+    "celKey": [
+      18,
+      180,
+      5
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u18_5",
+      "symbol": "u18_5",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "2*u18_5",
+        "u18_5",
+        "0"
+      ],
+      [
+        "2 + 4*u18_5",
+        "2 + 2*u18_5",
+        "1 + u18_5"
+      ],
+      [
+        "2 + 2*u18_5",
+        "2 + u18_5",
+        "1 + u18_5"
+      ],
+      [
+        "2 + 4*u18_5",
+        "1 + 3*u18_5",
+        "2*u18_5"
+      ],
+      [
+        "2 + 4*u18_5",
+        "1 + 3*u18_5",
+        "1 + u18_5"
+      ],
+      [
+        "2 + 2*u18_5",
+        "2 + u18_5",
+        "1"
+      ],
+      [
+        "1 + 2*u18_5",
+        "2*u18_5",
+        "u18_5"
+      ],
+      [
+        "2 + 2*u18_5",
+        "1 + 2*u18_5",
+        "1 + u18_5"
+      ],
+      [
+        "2 + 2*u18_5",
+        "1 + 2*u18_5",
+        "u18_5"
+      ],
+      [
+        "2*u18_5",
+        "2*u18_5",
+        "u18_5"
+      ],
+      [
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "2*u18_5",
+        "u18_5",
+        "u18_5"
+      ],
+      [
+        "2 + 2*u18_5",
+        "1 + u18_5",
+        "u18_5"
+      ],
+      [
+        "2 + 2*u18_5",
+        "1 + u18_5",
+        "1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 11,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 18,
+        "3": 19,
+        "4": 3,
+        "5": 6
+      },
+      "regions": 180,
+      "projectiveFVector": [
+        46,
+        135,
+        90
+      ],
+      "characteristicRoots": [
+        1,
+        8,
+        9
+      ]
+    }
+  },
+  {
+    "id": "cel-18-180-6",
+    "name": "Grünbaum A(18,4)",
+    "grunbaumLabel": [
+      18,
+      4
+    ],
+    "celKey": [
+      18,
+      180,
+      6
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u18_4",
+      "symbol": "u18_4",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "2*u18_4",
+        "u18_4",
+        "0"
+      ],
+      [
+        "2 + 4*u18_4",
+        "2 + 2*u18_4",
+        "1 + u18_4"
+      ],
+      [
+        "2 + 2*u18_4",
+        "2 + u18_4",
+        "1 + u18_4"
+      ],
+      [
+        "2 + 4*u18_4",
+        "1 + 3*u18_4",
+        "2*u18_4"
+      ],
+      [
+        "2 + 4*u18_4",
+        "1 + 3*u18_4",
+        "1 + u18_4"
+      ],
+      [
+        "2 + 2*u18_4",
+        "2 + u18_4",
+        "1"
+      ],
+      [
+        "2 + 2*u18_4",
+        "1 + 2*u18_4",
+        "1 + u18_4"
+      ],
+      [
+        "2 + 2*u18_4",
+        "1 + 2*u18_4",
+        "u18_4"
+      ],
+      [
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "2*u18_4",
+        "2*u18_4",
+        "u18_4"
+      ],
+      [
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "2*u18_4",
+        "u18_4",
+        "u18_4"
+      ],
+      [
+        "2 + 2*u18_4",
+        "1 + u18_4",
+        "u18_4"
+      ],
+      [
+        "2 + 2*u18_4",
+        "1 + u18_4",
+        "1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 11,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 18,
+        "3": 19,
+        "4": 3,
+        "5": 6
+      },
+      "regions": 180,
+      "projectiveFVector": [
+        46,
+        135,
+        90
+      ],
+      "characteristicRoots": [
+        1,
+        8,
+        9
+      ]
+    }
+  },
+  {
+    "id": "cel-19-200-4",
+    "name": "Grünbaum A(19,2)",
+    "grunbaumLabel": [
+      19,
+      2
+    ],
+    "celKey": [
+      19,
+      200,
+      4
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u19_2",
+      "symbol": "u19_2",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "2*u19_2",
+        "u19_2",
+        "0"
+      ],
+      [
+        "2 + 4*u19_2",
+        "2 + 2*u19_2",
+        "1 + u19_2"
+      ],
+      [
+        "2 + 2*u19_2",
+        "2 + u19_2",
+        "1 + u19_2"
+      ],
+      [
+        "2 + 4*u19_2",
+        "1 + 3*u19_2",
+        "2*u19_2"
+      ],
+      [
+        "2 + 4*u19_2",
+        "1 + 3*u19_2",
+        "1 + u19_2"
+      ],
+      [
+        "2 + 2*u19_2",
+        "2 + u19_2",
+        "1"
+      ],
+      [
+        "1 + 2*u19_2",
+        "2*u19_2",
+        "u19_2"
+      ],
+      [
+        "2 + 2*u19_2",
+        "1 + 2*u19_2",
+        "1 + u19_2"
+      ],
+      [
+        "2 + 2*u19_2",
+        "1 + 2*u19_2",
+        "u19_2"
+      ],
+      [
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "2*u19_2",
+        "2*u19_2",
+        "u19_2"
+      ],
+      [
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "2*u19_2",
+        "u19_2",
+        "u19_2"
+      ],
+      [
+        "2 + 2*u19_2",
+        "1 + u19_2",
+        "u19_2"
+      ],
+      [
+        "2 + 2*u19_2",
+        "1 + u19_2",
+        "1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 12,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 21,
+        "3": 18,
+        "4": 6,
+        "5": 6
+      },
+      "regions": 200,
+      "projectiveFVector": [
+        51,
+        150,
+        100
+      ],
+      "characteristicRoots": [
+        1,
+        9,
+        9
+      ]
+    }
+  },
+  {
+    "id": "cel-20-220-3",
+    "name": "Grünbaum A(20,1)",
+    "grunbaumLabel": [
+      20,
+      1
+    ],
+    "celKey": [
+      20,
+      220,
+      3
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u20_1",
+      "symbol": "u20_1",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "-1"
+      ],
+      [
+        "1",
+        "0",
+        "-u20_1"
+      ],
+      [
+        "1",
+        "0",
+        "-1 - u20_1"
+      ],
+      [
+        "1",
+        "0",
+        "1 - u20_1"
+      ],
+      [
+        "1",
+        "0",
+        "-1/2 - 1/2*u20_1"
+      ],
+      [
+        "1",
+        "0",
+        "-2"
+      ],
+      [
+        "1",
+        "0",
+        "-1 - 2*u20_1"
+      ],
+      [
+        "1",
+        "0",
+        "u20_1"
+      ],
+      [
+        "1",
+        "-1",
+        "1"
+      ],
+      [
+        "0",
+        "-1",
+        "1"
+      ],
+      [
+        "1",
+        "-1 + u20_1",
+        "-u20_1"
+      ],
+      [
+        "1",
+        "-1/2 + 1/2*u20_1",
+        "-u20_1"
+      ],
+      [
+        "1",
+        "-3 + 2*u20_1",
+        "3 - 3*u20_1"
+      ],
+      [
+        "1",
+        "-3 + 2*u20_1",
+        "1 - 2*u20_1"
+      ],
+      [
+        "1",
+        "-1/2 + 1/2*u20_1",
+        "-1/2 - 3/2*u20_1"
+      ],
+      [
+        "1",
+        "-1 + u20_1",
+        "-3*u20_1"
+      ],
+      [
+        "0",
+        "-1 + 1/2*u20_1",
+        "1"
+      ],
+      [
+        "1",
+        "-1",
+        "1 + u20_1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      2,
+      1
+    ],
+    "deconeIndex": 0,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 10,
+        "3": 45,
+        "10": 1
+      },
+      "regions": 220,
+      "projectiveFVector": [
+        56,
+        165,
+        110
+      ],
+      "characteristicRoots": [
+        1,
+        9,
+        10
+      ]
+    }
+  },
+  {
+    "id": "cel-20-220-4",
+    "name": "Grünbaum A(20,2)",
+    "grunbaumLabel": [
+      20,
+      2
+    ],
+    "celKey": [
+      20,
+      220,
+      4
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u20_2",
+      "symbol": "u20_2",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "2*u20_2",
+        "u20_2",
+        "0"
+      ],
+      [
+        "2 + 4*u20_2",
+        "2 + 2*u20_2",
+        "1 + u20_2"
+      ],
+      [
+        "1 + 2*u20_2",
+        "1 + u20_2",
+        "1"
+      ],
+      [
+        "2 + 2*u20_2",
+        "2 + u20_2",
+        "1 + u20_2"
+      ],
+      [
+        "2 + 4*u20_2",
+        "1 + 3*u20_2",
+        "2*u20_2"
+      ],
+      [
+        "2 + 4*u20_2",
+        "1 + 3*u20_2",
+        "1 + u20_2"
+      ],
+      [
+        "2 + 2*u20_2",
+        "2 + u20_2",
+        "1"
+      ],
+      [
+        "1 + 2*u20_2",
+        "2*u20_2",
+        "u20_2"
+      ],
+      [
+        "2 + 2*u20_2",
+        "1 + 2*u20_2",
+        "1 + u20_2"
+      ],
+      [
+        "2 + 2*u20_2",
+        "1 + 2*u20_2",
+        "u20_2"
+      ],
+      [
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "2*u20_2",
+        "2*u20_2",
+        "u20_2"
+      ],
+      [
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "2*u20_2",
+        "u20_2",
+        "u20_2"
+      ],
+      [
+        "2 + 2*u20_2",
+        "1 + u20_2",
+        "u20_2"
+      ],
+      [
+        "2 + 2*u20_2",
+        "1 + u20_2",
+        "1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 13,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 25,
+        "3": 15,
+        "4": 10,
+        "5": 6
+      },
+      "regions": 220,
+      "projectiveFVector": [
+        56,
+        165,
+        110
+      ],
+      "characteristicRoots": [
+        1,
+        9,
+        10
+      ]
+    }
+  },
+  {
+    "id": "cel-21-240-1",
+    "name": "Grünbaum A(21,4)",
+    "grunbaumLabel": [
+      21,
+      4
+    ],
+    "celKey": [
+      21,
+      240,
+      1
+    ],
+    "field": null,
+    "projectiveNormals": [
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "2"
+      ],
+      [
+        "0",
+        "1",
+        "3"
+      ],
+      [
+        "0",
+        "1",
+        "4"
+      ],
+      [
+        "0",
+        "2",
+        "3"
+      ],
+      [
+        "0",
+        "2",
+        "5"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "2"
+      ],
+      [
+        "1",
+        "1",
+        "3"
+      ],
+      [
+        "1",
+        "1",
+        "4"
+      ],
+      [
+        "1",
+        "2",
+        "3"
+      ],
+      [
+        "1",
+        "2",
+        "4"
+      ],
+      [
+        "1",
+        "2",
+        "5"
+      ],
+      [
+        "1",
+        "2",
+        "6"
+      ],
+      [
+        "1",
+        "3",
+        "6"
+      ],
+      [
+        "1",
+        "3",
+        "7"
+      ],
+      [
+        "2",
+        "3",
+        "7"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 0,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 22,
+        "3": 28,
+        "4": 6,
+        "5": 4,
+        "8": 1
+      },
+      "regions": 240,
+      "projectiveFVector": [
+        61,
+        180,
+        120
+      ],
+      "characteristicRoots": [
+        1,
+        9,
+        11
+      ]
+    }
+  },
+  {
+    "id": "cel-21-240-2",
+    "name": "Grünbaum A(21,5)",
+    "grunbaumLabel": [
+      21,
+      5
+    ],
+    "celKey": [
+      21,
+      240,
+      2
+    ],
+    "field": null,
+    "projectiveNormals": [
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "2"
+      ],
+      [
+        "0",
+        "1",
+        "3"
+      ],
+      [
+        "0",
+        "2",
+        "3"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "2"
+      ],
+      [
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "2"
+      ],
+      [
+        "1",
+        "1",
+        "3"
+      ],
+      [
+        "1",
+        "1",
+        "4"
+      ],
+      [
+        "1",
+        "2",
+        "2"
+      ],
+      [
+        "1",
+        "2",
+        "3"
+      ],
+      [
+        "1",
+        "2",
+        "4"
+      ],
+      [
+        "1",
+        "2",
+        "5"
+      ],
+      [
+        "1",
+        "3",
+        "4"
+      ],
+      [
+        "1",
+        "3",
+        "5"
+      ],
+      [
+        "1",
+        "3",
+        "6"
+      ],
+      [
+        "2",
+        "3",
+        "6"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 0,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 26,
+        "3": 20,
+        "4": 9,
+        "5": 4,
+        "6": 2
+      },
+      "regions": 240,
+      "projectiveFVector": [
+        61,
+        180,
+        120
+      ],
+      "characteristicRoots": [
+        1,
+        9,
+        11
+      ]
+    }
+  },
+  {
+    "id": "cel-21-240-3",
+    "name": "Grünbaum A(21,3)",
+    "grunbaumLabel": [
+      21,
+      3
+    ],
+    "celKey": [
+      21,
+      240,
+      3
+    ],
+    "field": null,
+    "projectiveNormals": [
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "2"
+      ],
+      [
+        "0",
+        "1",
+        "3"
+      ],
+      [
+        "0",
+        "2",
+        "3"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "2"
+      ],
+      [
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "2"
+      ],
+      [
+        "1",
+        "1",
+        "3"
+      ],
+      [
+        "1",
+        "1",
+        "4"
+      ],
+      [
+        "1",
+        "2",
+        "3"
+      ],
+      [
+        "1",
+        "2",
+        "4"
+      ],
+      [
+        "1",
+        "2",
+        "5"
+      ],
+      [
+        "1",
+        "3",
+        "5"
+      ],
+      [
+        "1",
+        "3",
+        "6"
+      ],
+      [
+        "2",
+        "2",
+        "5"
+      ],
+      [
+        "2",
+        "3",
+        "6"
+      ],
+      [
+        "2",
+        "3",
+        "7"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 0,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 24,
+        "3": 24,
+        "4": 9,
+        "6": 4
+      },
+      "regions": 240,
+      "projectiveFVector": [
+        61,
+        180,
+        120
+      ],
+      "characteristicRoots": [
+        1,
+        9,
+        11
+      ]
+    }
+  },
+  {
+    "id": "cel-21-240-4",
+    "name": "Grünbaum A(21,1)",
+    "grunbaumLabel": [
+      21,
+      1
+    ],
+    "celKey": [
+      21,
+      240,
+      4
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u21_1",
+      "symbol": "u21_1",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "-1"
+      ],
+      [
+        "1",
+        "0",
+        "-u21_1"
+      ],
+      [
+        "1",
+        "0",
+        "-1 - u21_1"
+      ],
+      [
+        "1",
+        "0",
+        "1 - u21_1"
+      ],
+      [
+        "1",
+        "0",
+        "-1/2 - 1/2*u21_1"
+      ],
+      [
+        "1",
+        "0",
+        "-2"
+      ],
+      [
+        "1",
+        "0",
+        "-1 - 2*u21_1"
+      ],
+      [
+        "1",
+        "0",
+        "u21_1"
+      ],
+      [
+        "1",
+        "-1",
+        "1"
+      ],
+      [
+        "0",
+        "-1",
+        "1"
+      ],
+      [
+        "1",
+        "-1 + u21_1",
+        "-u21_1"
+      ],
+      [
+        "1",
+        "-1/2 + 1/2*u21_1",
+        "-u21_1"
+      ],
+      [
+        "1",
+        "-3 + 2*u21_1",
+        "3 - 3*u21_1"
+      ],
+      [
+        "1",
+        "-3 + 2*u21_1",
+        "1 - 2*u21_1"
+      ],
+      [
+        "1",
+        "-1/2 + 1/2*u21_1",
+        "-1/2 - 3/2*u21_1"
+      ],
+      [
+        "1",
+        "-1 + u21_1",
+        "-3*u21_1"
+      ],
+      [
+        "0",
+        "-1 + 1/2*u21_1",
+        "1"
+      ],
+      [
+        "1",
+        "-1",
+        "1 + u21_1"
+      ],
+      [
+        "1",
+        "-1 + u21_1",
+        "-2*u21_1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      2,
+      1
+    ],
+    "deconeIndex": 0,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 15,
+        "3": 40,
+        "4": 5,
+        "10": 1
+      },
+      "regions": 240,
+      "projectiveFVector": [
+        61,
+        180,
+        120
+      ],
+      "characteristicRoots": [
+        1,
+        9,
+        11
+      ]
+    }
+  },
+  {
+    "id": "cel-21-240-5",
+    "name": "Grünbaum A(21,2)",
+    "grunbaumLabel": [
+      21,
+      2
+    ],
+    "celKey": [
+      21,
+      240,
+      5
+    ],
+    "field": {
+      "label": "Q(τ), τ=(1+√5)/2",
+      "polynomial": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "interval": [
+        "1618/1000",
+        "1619/1000"
+      ],
+      "id": "u21_2",
+      "symbol": "u21_2",
+      "sourceGenerator": "tau",
+      "degree": 2
+    },
+    "projectiveNormals": [
+      [
+        "2*u21_2",
+        "u21_2",
+        "0"
+      ],
+      [
+        "1 + 2*u21_2",
+        "1 + u21_2",
+        "u21_2"
+      ],
+      [
+        "2 + 4*u21_2",
+        "2 + 2*u21_2",
+        "1 + u21_2"
+      ],
+      [
+        "1 + 2*u21_2",
+        "1 + u21_2",
+        "1"
+      ],
+      [
+        "2 + 2*u21_2",
+        "2 + u21_2",
+        "1 + u21_2"
+      ],
+      [
+        "2 + 4*u21_2",
+        "1 + 3*u21_2",
+        "2*u21_2"
+      ],
+      [
+        "2 + 4*u21_2",
+        "1 + 3*u21_2",
+        "1 + u21_2"
+      ],
+      [
+        "2 + 2*u21_2",
+        "2 + u21_2",
+        "1"
+      ],
+      [
+        "1 + 2*u21_2",
+        "2*u21_2",
+        "u21_2"
+      ],
+      [
+        "2 + 2*u21_2",
+        "1 + 2*u21_2",
+        "1 + u21_2"
+      ],
+      [
+        "2 + 2*u21_2",
+        "1 + 2*u21_2",
+        "u21_2"
+      ],
+      [
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "2*u21_2",
+        "2*u21_2",
+        "u21_2"
+      ],
+      [
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "2*u21_2",
+        "u21_2",
+        "u21_2"
+      ],
+      [
+        "2 + 2*u21_2",
+        "1 + u21_2",
+        "u21_2"
+      ],
+      [
+        "2 + 2*u21_2",
+        "1 + u21_2",
+        "1"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 14,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 30,
+        "3": 10,
+        "4": 15,
+        "5": 6
+      },
+      "regions": 240,
+      "projectiveFVector": [
+        61,
+        180,
+        120
+      ],
+      "characteristicRoots": [
+        1,
+        9,
+        11
+      ]
+    }
+  },
+  {
+    "id": "cel-21-248-1",
+    "name": "Grünbaum A(21,6)",
+    "grunbaumLabel": [
+      21,
+      6
+    ],
+    "celKey": [
+      21,
+      248,
+      1
+    ],
+    "field": null,
+    "projectiveNormals": [
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "2",
+        "-1"
+      ],
+      [
+        "1",
+        "-1",
+        "0"
+      ],
+      [
+        "1",
+        "-1",
+        "-2"
+      ],
+      [
+        "1",
+        "0",
+        "-1"
+      ],
+      [
+        "1",
+        "3",
+        "-4"
+      ],
+      [
+        "1",
+        "3",
+        "-1"
+      ],
+      [
+        "1",
+        "1",
+        "-1"
+      ],
+      [
+        "1",
+        "1",
+        "-2"
+      ],
+      [
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "1",
+        "2",
+        "-2"
+      ],
+      [
+        "0",
+        "2",
+        "-3"
+      ],
+      [
+        "1",
+        "-1",
+        "1"
+      ],
+      [
+        "1",
+        "2",
+        "-3"
+      ],
+      [
+        "1",
+        "1",
+        "-3"
+      ],
+      [
+        "1",
+        "3",
+        "-3"
+      ],
+      [
+        "3",
+        "5",
+        "-6"
+      ],
+      [
+        "1",
+        "5",
+        "-4"
+      ],
+      [
+        "2",
+        "4",
+        "-3"
+      ],
+      [
+        "2",
+        "2",
+        "-3"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 0,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 25,
+        "3": 20,
+        "4": 15,
+        "5": 2,
+        "6": 1
+      },
+      "regions": 248,
+      "projectiveFVector": [
+        63,
+        186,
+        124
+      ],
+      "characteristicRoots": []
+    }
+  },
+  {
+    "id": "cel-21-252-1",
+    "name": "Grünbaum A(21,7)",
+    "grunbaumLabel": [
+      21,
+      7
+    ],
+    "celKey": [
+      21,
+      252,
+      1
+    ],
+    "field": {
+      "label": "Q(ρ), ρ³−3ρ−25=0",
+      "polynomial": [
+        "-25",
+        "-3",
+        "0",
+        "1"
+      ],
+      "interval": [
+        "3264/1000",
+        "3265/1000"
+      ],
+      "id": "u21_7",
+      "symbol": "u21_7",
+      "sourceGenerator": "rho",
+      "degree": 3
+    },
+    "projectiveNormals": [
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "-1"
+      ],
+      [
+        "1",
+        "-1",
+        "-1"
+      ],
+      [
+        "1",
+        "-1",
+        "-1/3 + 1/3*u21_7"
+      ],
+      [
+        "1",
+        "0",
+        "-1"
+      ],
+      [
+        "1",
+        "-11/9 + 1/9*u21_7 + 1/9*u21_7^2",
+        "-1"
+      ],
+      [
+        "0",
+        "1",
+        "-2/3 - 1/3*u21_7"
+      ],
+      [
+        "1",
+        "-1",
+        "-11/9 + 1/9*u21_7 + 1/9*u21_7^2"
+      ],
+      [
+        "1",
+        "-1/3 + 1/3*u21_7",
+        "-1"
+      ],
+      [
+        "0",
+        "1",
+        "1/3 - 1/3*u21_7"
+      ],
+      [
+        "1",
+        "-4/3 + 1/3*u21_7",
+        "-1"
+      ],
+      [
+        "1",
+        "-1/3 + 1/3*u21_7",
+        "-2/3 - 1/3*u21_7"
+      ],
+      [
+        "1",
+        "-1/3 + 1/3*u21_7",
+        "-10/9 + 2/9*u21_7 - 1/9*u21_7^2"
+      ],
+      [
+        "1",
+        "-5/9 + 4/9*u21_7 + 1/9*u21_7^2",
+        "-16/9 - 1/9*u21_7 - 1/9*u21_7^2"
+      ],
+      [
+        "1",
+        "0",
+        "-8/9 - 2/9*u21_7 + 1/9*u21_7^2"
+      ],
+      [
+        "1",
+        "4/9 + 4/9*u21_7 + 1/9*u21_7^2",
+        "-22/9 - 4/9*u21_7 - 1/9*u21_7^2"
+      ],
+      [
+        "1",
+        "-5/3 - 1/3*u21_7",
+        "-5/9 + 4/9*u21_7 + 1/9*u21_7^2"
+      ],
+      [
+        "1",
+        "-2/9 + 1/9*u21_7 + 1/9*u21_7^2",
+        "-2"
+      ],
+      [
+        "1",
+        "4/9 + 4/9*u21_7 + 1/9*u21_7^2",
+        "-13/9 - 4/9*u21_7 - 1/9*u21_7^2"
+      ],
+      [
+        "1",
+        "-5/9 + 4/9*u21_7 + 1/9*u21_7^2",
+        "-7/9 - 1/9*u21_7 - 1/9*u21_7^2"
+      ],
+      [
+        "1",
+        "-4/3 + 1/3*u21_7",
+        "-1/9 + 2/9*u21_7 - 1/9*u21_7^2"
+      ]
+    ],
+    "coordinatePermutation": [
+      0,
+      1,
+      2
+    ],
+    "deconeIndex": 0,
+    "source": "https://d-nb.info/1250074576/34",
+    "dataSource": "https://github.com/sophiasage/cn_hyperarr/blob/4620e43b0db7cbc4eafaa610d9b2c3dd211e5426/cn_hyperarr/database.py",
+    "sourceSha256": "c2cb7439b9c43b5a49676235138a6fb1c08fdfc3619703bb2680a3e130c534aa",
+    "sourceTable": "CEL Appendix A; labels and invariants from Table 5",
+    "expected": {
+      "t": {
+        "2": 24,
+        "3": 22,
+        "4": 15,
+        "5": 3
+      },
+      "regions": 252,
+      "projectiveFVector": [
+        64,
+        189,
+        126
+      ],
+      "characteristicRoots": []
+    }
+  }
+]

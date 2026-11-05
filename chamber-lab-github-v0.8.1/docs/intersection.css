@@ -1,0 +1,40 @@
+.edit-toolbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;padding:9px 22px;background:#fff;border-bottom:1px solid #e2e9df}
+.edit-history-buttons{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.edit-toolbar #selected-line-status{margin-left:auto}
+.edit-toolbar .secondary{font-size:11px;padding:6px 12px}
+.danger-line{border:1px solid #dfb8ad;background:#fff8f4;color:#a65b43;font-size:11px;padding:7px 11px}
+.danger-line:hover{background:#fae9df;color:#8e4930}
+.danger-line:disabled{border-color:#e3e7e0;color:#a7b0a6;background:#f9faf7;cursor:default}
+.inspector .danger-line{margin-top:8px}
+.intersection-summary{margin:22px 0;padding:15px 17px;border:1px solid #dce5db;border-radius:6px;background:#fafcf8}
+.intersection-summary .matrix-title{margin:0 0 8px}
+.intersection-summary .summary-facts{margin:0}
+.poset-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+.poset-facts>div{border-left:2px solid #c1d3c1;padding:4px 10px}
+.poset-facts span{display:block;font-size:9px;color:#8a998d;margin-bottom:4px}
+.poset-facts b{font-size:12px;font-weight:500;color:#3a6358}
+.poset-mode-label{font-size:10px;min-width:180px;margin:0}
+.poset-mode-label select{margin-top:4px}
+.poset-whitney{margin:12px 0 20px}
+.poset-structure-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid #e5eade;padding-top:14px}
+.poset-structure-head h3{margin-right:auto;font-size:12px}
+.poset-check{display:flex;align-items:center;gap:6px;font-size:11px;margin:0;cursor:pointer}
+.poset-check input{width:auto;margin:0;accent-color:#277e8d}
+.poset-graph{background:#f8fbf6;border:1px solid #e1e8dc;border-radius:6px;padding:8px 5px}
+.poset-graph svg{display:block;width:100%;min-height:200px}
+.poset-rank-label{font-family:var(--mono);font-size:11px;fill:#85978a}
+.poset-node{cursor:pointer}
+.poset-node text{font-family:var(--mono);font-size:10px;fill:#4d6d60;paint-order:stroke;stroke:#f8fbf6;stroke-width:3px}
+.poset-node:hover circle,.poset-node:focus circle{stroke:#b57b2e;stroke-width:3}
+.poset-node:focus{outline:none}
+.poset-selection{padding:14px 17px;margin:15px 0;border-left:2px solid #bc9857;background:#fffaf0;font-size:11px}
+.poset-selection h3{margin:0 0 8px;font-size:13px}
+.poset-link{font-family:var(--mono);font-size:10px;color:#227b8c;text-decoration:underline;text-underline-offset:3px;padding:3px 4px}
+.poset-link:hover{background:#e7f2eb}
+.poset-table-wrap{max-height:330px;overflow:auto;border:1px solid #dce5da;border-radius:5px;margin:12px 0 18px}
+.poset-table{margin:0;font-size:10px}
+.poset-table th{position:sticky;top:0;z-index:1;white-space:nowrap}
+.poset-table td{min-width:35px;padding:7px 8px;vertical-align:top}
+.poset-table td:nth-child(6){min-width:120px}
+.poset-filter{margin-bottom:0}
+@media(max-width:850px){.poset-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.edit-toolbar{padding:8px 14px}.edit-history-buttons .tiny{display:none}.edit-toolbar #selected-line-status{margin-left:0}.poset-structure-head{gap:8px}.poset-check{font-size:10px}}
