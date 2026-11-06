@@ -169,3 +169,12 @@ Presets open at Q1. Previous/next, first, completed view and direct step buttons
 The default camera fits corners so small polygons remain readable, with separate controls to include all pivots or all intersections. Off-screen pivots have directional callouts; infinite pivots use directions rather than finite dots. Completed real polygons have thick edges and a light fill. Complex examples use an explicitly labeled connection schematic; the full interactive incidence graph remains available in a disclosure. Real charts with infinite corners also show the schematic. The exact arithmetic, closure polynomial and certification logic are unchanged.
 
 The Plinth checks additionally cover staged rendering for both branches of all eight examples, closure versus a nonsplitting witness, exact endpoint roles, all affine-chart choices, infinite-pivot directions and the corner-focused camera.
+
+
+## Browser resonance calculation
+
+The jump-loci panel has a dedicated live R¹₁ action for complexified real line arrangements. It bypasses the Singular decomposition cache and enumerates every projective support, including supports omitting the chosen infinity line. Projective multiple-point spaces are added directly; nonlocal spaces come from connected real 3-multinets. Completeness uses the Falk–Yuzvinsky correspondence and the exclusion of real 4-nets. Every parameter-basis pair is checked independently in the Orlik–Solomon algebra; equations are canonicalized over Q and duplicate/contained spaces are removed. These are set-theoretic decompositions over C; the live action does not compute the jump ideal’s scheme generators.
+
+The default limits are 12 affine lines, 8192 projective supports, 100000 search states and a time budget selected as 1, 3 or 10 seconds. Time limits are cooperative checks during support/partition search. A limit produces verified included linear spaces with an inclusion sign, never a claim that missing components are absent. HTML, TXT, TeX and JSON preserve the full-versus-partial distinction. The calculation runs in the existing polynomial Worker; no server-side CAS or new dependency is required.
+
+Known examples still load saved exact results automatically. The dedicated live button always recalculates, and its result displays its source, elapsed time and support count. Characteristic calculations and depths greater than 1 retain their existing behavior and Singular export. A separate server-side computation service is not part of this implementation.

@@ -82,6 +82,7 @@ export function verifyMultinetCertificate(data,certificate,options={}){
 }
 
 export function searchMultinets(data,options={}){
+  const started=Date.now(),maxTimeMs=options.maxTimeMs===undefined?Infinity:Math.max(0,Number(options.maxTimeMs)||0);
   const S=supportData(data,options),n=S.supportedIndices.length,maxStates=Math.max(1,Math.min(10000000,Math.floor(options.maxStates??200000))),maxResults=Math.max(1,Math.min(1000,Math.floor(options.maxResults??25)));
   const linePos=new Map(S.supportedIndices.map((x,i)=>[x,i])),D=new DSU(n);
   // A point is either monochromatic or belongs to the base and meets ALL
@@ -111,6 +112,7 @@ export function searchMultinets(data,options={}){
   function viable(pointIndex){const aa=pointAtoms[pointIndex],seen=new Set(),remaining=[];for(const i of aa)if(color[i]<0)remaining.push(i);else seen.add(color[i]);return seen.size!==2||remaining.length>0;}
   function visit(depth,maxColor){
     if(aborted)return;
+    if(Date.now()-started>=maxTimeMs){aborted='time-limit';return;}
     if(baseResult.states>=maxStates){aborted='state-limit';return;}baseResult.states++;
     if(depth===atoms.length){if(maxColor!==2)return;baseResult.partitions++;const blocks=[[],[],[]];atoms.forEach((atom,i)=>blocks[color[i]].push(...atom));const cert=analyzePartition(S,blocks);if(cert){baseResult.certificates.push(cert);if(baseResult.certificates.length>=maxResults)aborted='result-limit';}return;}
     if(maxColor+(atoms.length-depth)<2)return;

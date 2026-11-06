@@ -448,17 +448,32 @@ function paintGroup(r){
 
 function bindJumpIdeals(){
   $('#compute-jump-ideals').onclick=()=>{const k=Math.max(1,Math.min(data.n+1,Number($('#jump-k').value)||1));if(k!==state.k){state.k=k;persist();renderAnalysis();}calculateJumpIdeals();};
+  $('#compute-live-resonance').disabled=state.k!==1;
+  $('#compute-live-resonance').onclick=()=>calculateJumpIdeals({live:true});
+  $('#resonance-budget').value=String([1,3,10].includes(state.resonanceBudget)?state.resonanceBudget:3);
+  $('#resonance-budget').onchange=e=>{state.resonanceBudget=Number(e.target.value);persist();};
   const completed=['local','aomoto'].every(kind=>resultCache.has(calcKey('jump-ideal',{kind,k:state.k})));
   const known=JUMP_IDEAL_CACHE.some(r=>r.geometryKey===jumpGeometryKey(data)&&r.k===state.k&&r.decomposition.complete);
-  if(completed||known)calculateJumpIdeals();
+  if(completed||known)calculateJumpIdeals({savedOnly:true});
 }
-async function calculateJumpIdeals(){
+async function calculateJumpIdeals({live=false,savedOnly=false}={}){
   const el=$('#computed-ideals-result'),gen=panelGeneration,k=state.k;if(!el)return;
-  $('#compute-jump-ideals').disabled=true;el.innerHTML='<div class="calculation-placeholder">多項式の生成元と、証明済みの成分分解を確認しています…</div>';
-  const results=await Promise.allSettled(['local','aomoto'].map(kind=>cachedStructure('jump-ideal',{kind,k})));
-  if(gen!==panelGeneration)return;$('#compute-jump-ideals').disabled=false;
-  el.innerHTML=results.map((r,i)=>r.status==='fulfilled'?idealResultHTML(r.value):`<div class="structure-error">${i?'Resonance':'Characteristic'} の計算を完了できませんでした：${esc(r.reason.message)}</div>`).join('');
+  if(live&&k!==1)return;
+  const budget=Number($('#resonance-budget').value)||3;
+  const kinds=live?['aomoto']:['aomoto','local'].filter(kind=>!savedOnly||resultCache.has(calcKey('jump-ideal',{kind,k}))||JUMP_IDEAL_CACHE.some(r=>r.geometryKey===jumpGeometryKey(data)&&r.kind===kind&&r.k===k));
+  $('#compute-jump-ideals').disabled=true;$('#compute-live-resonance').disabled=true;$('#resonance-budget').disabled=true;
+  el.innerHTML=live?'<div class="calculation-placeholder" role="status">Resonance の局所成分と、全ての射影部分配置の multinet を調べています…</div>':'<div class="calculation-placeholder" role="status">多項式の生成元と、成分分解を確認しています…</div>';
+  const results=await Promise.allSettled(kinds.map(kind=>live?request('jump-ideal',{kind,k,options:{liveResonance:true,maxTimeMs:budget*1000}}):cachedStructure('jump-ideal',{kind,k})));
+  if(gen!==panelGeneration)return;
+  $('#compute-jump-ideals').disabled=false;$('#compute-live-resonance').disabled=k!==1;$('#resonance-budget').disabled=false;
+  if(live&&results[0].status==='fulfilled'){
+    const key=calcKey('jump-ideal',{kind:'aomoto',k}),previous=resultCache.get(key);
+    if(!previous?.decomposition.complete)resultCache.set(key,results[0].value);
+  }
   const valid=results.filter(r=>r.status==='fulfilled').map(r=>r.value);
+  if(live){const knownLocal=resultCache.get(calcKey('jump-ideal',{kind:'local',k}));if(knownLocal)valid.push(knownLocal);}
+  el.innerHTML=valid.map(idealResultHTML).join('')+results.map((r,i)=>r.status==='rejected'?`<div class="structure-error">${kinds[i]==='aomoto'?'Resonance':'Characteristic'} の計算を完了できませんでした：${esc(r.reason.message)}</div>`:'').join('');
+  if(savedOnly&&!kinds.includes('local'))el.insertAdjacentHTML('beforeend','<p class="note">この配置・深さの Characteristic の全成分は保存されていません。「両方のイデアル・成分を計算」で定義式の計算を試せます。</p>');
   if(!valid.length)return;
   el.insertAdjacentHTML('beforeend','<div class="button-row ideal-exports"><button id="export-jump-formulas-tex" class="secondary small">定義式の分解 TeX ↓</button><button id="export-jump-formulas-text" class="quiet small">式の一覧 TXT ↓</button><button id="export-jump-ideals" class="secondary small">生成元・成分・検証情報 JSON ↓</button><button id="export-jump-singular-local" class="quiet small">V の Singular スクリプト ↓</button><button id="export-jump-singular-aomoto" class="quiet small">R の Singular スクリプト ↓</button></div>');
   el.insertAdjacentHTML('beforeend',`<details class="formula-source"><summary>定義式の TeX・テキストを表示</summary><label>TeX<textarea readonly rows="9" spellcheck="false" aria-label="分解式の TeX">${esc(valid.map(decompositionTeX).join('\n'))}</textarea></label><label>テキスト<textarea readonly rows="7" spellcheck="false" aria-label="分解式のテキスト">${esc(valid.map(decompositionText).join('\n'))}</textarea></label></details>`);

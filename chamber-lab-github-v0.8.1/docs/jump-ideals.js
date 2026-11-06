@@ -3,6 +3,7 @@
 // compute-jump-cache.mjs and include scheme/radical equality certificates.
 import {maskIndices} from './math.js';
 import {JUMP_IDEAL_CACHE} from './jump-cache.js';
+import {computeLiveResonance} from './resonance-live.js';
 
 export const jumpGeometryKey=data=>JSON.stringify(data.lines.map(l=>l.map(String)));
 const normalizeKind=kind=>kind==='local'||kind==='characteristic'?'local':kind==='aomoto'||kind==='resonance'?'aomoto':(()=>{throw Error('local または aomoto を指定してください');})();
@@ -179,11 +180,19 @@ export function computeJumpIdeal(data,kind='local',k=1,options={}){
   kind=normalizeKind(kind);k=indexCheck(data,k);
   if(!data.verified)throw Error('普遍複体の検証を通過する flag を使ってください');
   const common={available:true,kind,k,n:data.n,ring:kind==='local'?'Q[t₁±¹,…,tₙ±¹]':'Q[a₁,…,aₙ]',definition:definition(data,kind,k),geometryKey:jumpGeometryKey(data)};
-  const cached=!options.ignoreCache&&JUMP_IDEAL_CACHE.find(c=>c.geometryKey===common.geometryKey&&c.kind===kind&&c.k===k);
+  const forcedLive=kind==='aomoto'&&k===1&&options.liveResonance===true;
+  const cached=!options.ignoreCache&&!forcedLive&&JUMP_IDEAL_CACHE.find(c=>c.geometryKey===common.geometryKey&&c.kind===kind&&c.k===k);
   if(cached)return {...common,ideal:{...cached.ideal,generatorCount:cached.ideal.generatorCount??cached.ideal.generators.length},decomposition:cached.decomposition,computation:{...cached.computation,cache:true,sourceId:cached.sourceId}};
   const vars=variables(data.n,kind),special=k>data.n?'empty':k===data.n?'point':null;
   if(special){const generators=special==='empty'?['1']:vars.map(v=>kind==='local'?v+' - 1':v),components=special==='empty'?[]:[{generators,dimension:0,absolutePrime:true,irreducibilityCertificate:'Independent affine linear coordinates (identity / origin).'}];
     return {...common,ideal:{complete:true,exact:true,generators,generatorCount:generators.length,saturated:kind==='local'},decomposition:{complete:true,over:'C',components,radicalGenerators:generators,schemeEqualsRadical:true},computation:{engine:'exact augmentation / dimension boundary',cache:false}};}
+  if(kind==='aomoto'&&k===1&&(forcedLive||(!options.ignoreCache&&options.liveResonance!==false))){
+    const live=computeLiveResonance(data,options);
+    return {...common,
+      ideal:{complete:false,exact:true,skipped:true,generators:[],generatorCount:0,reason:'線形部分空間としての resonance を計算しました。jump ideal のスキーム生成元は展開していません。'},
+      decomposition:{...live,over:'C',radicalGenerators:null,radicalEqualityVerified:live.complete,irredundancyVerified:live.complete},
+      computation:{engine:'Exact live resonance: projective flats and exhaustive real multinet supports',cache:false,live:true,...live.statistics,verification:live.verification}};
+  }
   const computed=sparseEngine(data,kind,options).compute(data.n-k+1),full=!!computed.complete&&!computed.generators.length;
   return {...common,ideal:{...computed,generatorCount:computed.generators.length,saturated:kind==='local'?'Laurent generators; polynomial contraction not computed':false},
     decomposition:{complete:full,over:'C',components:full?[{generators:[],dimension:data.n,absolutePrime:true,irreducibilityCertificate:'Zero ideal in a polynomial / Laurent polynomial domain.'}]:[],radicalGenerators:full?[]:null,
