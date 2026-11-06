@@ -79,6 +79,8 @@
 .pl-check input{width:auto;margin:0;accent-color:#5d9589}
 .pl-canvas{border:1px solid #dfe7db;border-radius:6px;background:#f9fcf7;max-height:590px;overflow:auto}
 .pl-canvas>svg{display:block;width:100%;min-height:300px}
+#pl-canvas svg[data-pl-plot]{touch-action:none;user-select:none}
+.pl-touch-hint{margin:6px 0 0}
 .pl-base-line{cursor:pointer}
 .pl-base-line:hover{stroke:#c89c442a}
 .pl-base-point{fill:#879c8b;stroke:#fff;stroke-width:1;cursor:pointer}

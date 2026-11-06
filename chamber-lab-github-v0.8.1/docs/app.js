@@ -15,6 +15,7 @@ import {JUMP_IDEAL_CACHE} from './jump-cache.js';
 import {decompositionText,decompositionTeX} from './jump-formulas.js';
 import {wrapAngle,toView,fromView,projectPoint,unprojectPoint,viewportCorners,clipLineToView,fitRotatedPoints,flagBottomView,projectToExactLine,pivotForLine,rotatedLine,tangentAngle,flagAfterLineEdit} from './rotation.js';
 import {alexanderSage} from './alexander.js';
+import {attachPinchZoom} from './pinch-zoom.js';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const DEFAULT={version:1,viewAngle:0,flagBottom:false,uiRelease:'0.5',netSupport:null,netBudget:200000,netResultIndex:0,overviewPane:'invariants',graphMode:'affine',graphZoom:1,name:PRESETS[0].name,preset:'a3',lines:PRESETS[0].lines,flag:null,tab:'overview',mode:'select',order:3,w:['1','1','1','1','1'],localMode:'cyclic',complex:Array(5).fill([1,0]),homology:false,a:Array(5).fill('1'),field:'fp',p:3,k:1,matrixKind:'local',matrixDisplay:'symbolic'};
 let state=structuredClone(DEFAULT);try{const s=JSON.parse(localStorage.getItem('chamber-lab-v1'));if(s?.version===1&&Array.isArray(s.lines)&&s.lines.length<=20)state={...state,...s};if(s?.uiRelease!=='0.5'){state.tab='overview';state.uiRelease='0.5';state.overviewPane='invariants';}}catch{}
@@ -119,7 +120,7 @@ function renderCanvas(){const svg=$('#stage');view.angle=wrapAngle(state.viewAng
  const [fx,fy]=project(data.f0.map(Number));s+=`<circle cx="${fx}" cy="${fy}" r="5" fill="#c5913c" stroke="white" stroke-width="2" pointer-events="none"/><text x="${fx+9}" y="${fy+5}" font-size="12" fill="#a57929" font-family="serif" pointer-events="none">F⁰</text>`;
  s+=rotationOverlaySVG();
  if(drawStart){const a=project(drawStart.map(Number));s+=`<circle cx="${a[0]}" cy="${a[1]}" r="5" fill="#0c8ea4" stroke="white" stroke-width="2" pointer-events="none"/>`;if(pointer&&String(pointer)!==String(drawStart)){try{const ghost=svgLine(lineThrough(drawStart,pointer));if(ghost)s+=`<line x1="${ghost[0][0]}" y1="${ghost[0][1]}" x2="${ghost[1][0]}" y2="${ghost[1][1]}" stroke="#128aa3" stroke-width="2" stroke-dasharray="4 5" pointer-events="none"/>`;}catch{}}}
- if(['draw','flag'].includes(state.mode)&&pointer){const p=project(pointer.map(Number));s+=`<circle cx="${p[0]}" cy="${p[1]}" r="3.8" fill="#087b9b" fill-opacity=".5" pointer-events="none"/><text x="${p[0]+9}" y="${p[1]-9}" font-family="monospace" font-size="10" fill="#087b9b" pointer-events="none">(${pointer.map(String).join(', ')})</text>`;}const guide=$('#drawing-guide');guide.hidden=state.mode==='select';guide.innerHTML=state.mode==='line-select'?(rotationTarget?'<b>H'+(rotationTarget.index+1)+' を選択中</b><span>上の削除ボタン / Delete キーで直線を削除</span>':'<b>直線をクリックして選択</b><span>直線全体の削除、回転へ</span>'):state.mode==='rotate-line'?(lineGesture?.type==='line'?'<b>直線の回転をプレビュー</b><span>放すと交点・chamber を再計算 · Esc で取消</span>':rotationTarget?'<b>H'+(rotationTarget.index+1)+' を回す</b><span>線・丸いハンドルをドラッグ · オレンジの支点も移動可</span>':'<b>直線をつまんで回転</b><span>線をドラッグ · 支点は近い交点から選択</span>'):state.mode==='flag'?'<b>Flag を選ぶ</b><span>交点の外側で 2 点を選択</span>':drawStart?'<b>② もう 1 点を選ぶ</b><span>直線が完成 · Esc でキャンセル</span>':'<b>① 図の上で最初の点を選ぶ</b><span>次に別の点を選ぶと 1 本完成</span>';const key=$('#net-plot-key');key.hidden=!net;if(net){const infinityClass=net.blocks.findIndex(b=>b.includes(data.n));key.innerHTML=`<span>(3,${esc(net.degree)})</span> `+net.blocks.map((_,b)=>`<b style="color:${BLOCK_COLORS[b]}">class ${b+1}</b>`).join(' ')+(infinityClass>=0?`<small>H∞: class ${infinityClass+1}, m=${esc(net.weights[data.n])}</small>`:'');}svg.innerHTML=s;svg.classList.toggle('is-rotating',!!lineGesture?.moved);updateEditControls();svg.style.cursor=['select','line-select'].includes(state.mode)?'default':state.mode==='rotate-line'?'grab':'crosshair';$('#canvas-hint').textContent=state.mode==='line-select'?'直線をクリックして選択 · Delete で削除':state.mode==='rotate-line'?'線をドラッグして回転 · Shift で15°刻み · Esc で取消':state.mode==='select'?'chamber を選択 · ドラッグで移動':drawStart?'もう 1 点を選択 · Esc でキャンセル':state.mode==='flag'?'2 点で F¹ を指定 · 交点の外側に選んでください':'2 点で直線を描く · ¼ 方眼・交点にスナップ';}
+ if(['draw','flag'].includes(state.mode)&&pointer){const p=project(pointer.map(Number));s+=`<circle cx="${p[0]}" cy="${p[1]}" r="3.8" fill="#087b9b" fill-opacity=".5" pointer-events="none"/><text x="${p[0]+9}" y="${p[1]-9}" font-family="monospace" font-size="10" fill="#087b9b" pointer-events="none">(${pointer.map(String).join(', ')})</text>`;}const guide=$('#drawing-guide');guide.hidden=state.mode==='select';guide.innerHTML=state.mode==='line-select'?(rotationTarget?'<b>H'+(rotationTarget.index+1)+' を選択中</b><span>上の削除ボタン / Delete キーで直線を削除</span>':'<b>直線をクリックして選択</b><span>直線全体の削除、回転へ</span>'):state.mode==='rotate-line'?(lineGesture?.type==='line'?'<b>直線の回転をプレビュー</b><span>放すと交点・chamber を再計算 · Esc で取消</span>':rotationTarget?'<b>H'+(rotationTarget.index+1)+' を回す</b><span>線・丸いハンドルをドラッグ · オレンジの支点も移動可</span>':'<b>直線をつまんで回転</b><span>線をドラッグ · 支点は近い交点から選択</span>'):state.mode==='flag'?'<b>Flag を選ぶ</b><span>交点の外側で 2 点を選択</span>':drawStart?'<b>② もう 1 点を選ぶ</b><span>直線が完成 · Esc でキャンセル</span>':'<b>① 図の上で最初の点を選ぶ</b><span>次に別の点を選ぶと 1 本完成</span>';const key=$('#net-plot-key');key.hidden=!net;if(net){const infinityClass=net.blocks.findIndex(b=>b.includes(data.n));key.innerHTML=`<span>(3,${esc(net.degree)})</span> `+net.blocks.map((_,b)=>`<b style="color:${BLOCK_COLORS[b]}">class ${b+1}</b>`).join(' ')+(infinityClass>=0?`<small>H∞: class ${infinityClass+1}, m=${esc(net.weights[data.n])}</small>`:'');}svg.innerHTML=s;svg.classList.toggle('is-rotating',!!lineGesture?.moved);updateEditControls();svg.style.cursor=['select','line-select'].includes(state.mode)?'default':state.mode==='rotate-line'?'grab':'crosshair';$('#canvas-hint').textContent=state.mode==='line-select'?'直線をクリックして選択 · Delete で削除':state.mode==='rotate-line'?'線をドラッグして回転 · Shift で15°刻み · Esc で取消':state.mode==='select'?'選択・ドラッグで移動 · 2本指で拡大・縮小':drawStart?'もう 1 点を選択 · Esc でキャンセル':state.mode==='flag'?'2 点で F¹ を指定 · 交点の外側に選んでください':'2 点で直線を描く · ¼ 方眼・交点にスナップ';}
 function renderInspector(){if(state.tab==='overview'&&state.overviewPane==='tope')renderGraph();const el=$('#inspector');if(['rotate-line','line-select'].includes(state.mode)&&rotationTarget){renderRotationInspector(el);return;}const ix=currentIntersection();if(ix){el.innerHTML=intersectionInspectorHTML(ix.poset,ix.node);return;}if(faceHighlight&&state.tab==='overview'&&state.overviewPane==='faces'){const f=faceHighlight.face;el.innerHTML=`<p class="inspector-title">${f.id} · face</p><div class="sign-vector">${f.covector.map(x=>x<0?'−':x>0?'+':'0').join(' ')}</div><p class="note">実次元 ${f.dimension} / rank ${f.rank}<br>零成分 ${f.zeroCount} · 直下 ${f.lowerCovers.length} / 直上 ${f.upperCovers.length}</p>`;return;}if(entrySelected){const e=data[entrySelected.matrix][entrySelected.row][entrySelected.col],ids=maskIndices(e.sep,data.n).map(i=>'H'+(i+1));el.innerHTML=`<p class="inspector-title">${e.from} → ${e.to}</p><div class="data-list"><span>degree</span><span>${e.deg}</span><span>分離する直線</span><span>${ids.length}</span></div><div class="sign-vector" style="font-size:11px;letter-spacing:1px">${ids.join(', ')||'∅'}</div><p class="note">オレンジ色が Sep(${e.from}, ${e.to})。輪郭のある 2 領域が行列成分の始点と終点です。</p><div class="formula">${esc(symbolicEntry(e,data.n,state.matrixKind))}</div>`;return;}if(netColoring&&!selected&&state.tab==='overview'&&state.overviewPane==='nets'){el.innerHTML=`<p class="inspector-title">(3,${esc(netColoring.degree)}) ${netColoring.isNet?'net':'multinet'}</p><div class="data-list"><span>選択した直線</span><span>${netColoring.supportedIndices.length}</span><span>基点</span><span>${netColoring.basepoints.length}</span><span>reduced</span><span>${netColoring.reduced?'YES':'NO'}</span></div><p class="note">図の 3 色は直線のクラスです。重みと基点での釣り合いを下の表で確認できます。</p>`;return;}const c=data.cells.find(c=>c.id===selected);if(!c){el.innerHTML='<p class="note">chamber や行列の成分を選ぶと、対応する幾何データを表示します。</p>';return;}el.innerHTML=`<p class="inspector-title">${c.id} <span class="chip">ch${c.degree}</span></p><div class="data-list"><span>基底の次数</span><span>${c.degree}</span><span>領域</span><span>${c.unbounded?'非有界':'有界'}</span><span>F¹ との交わり</span><span>${c.degree<2?'あり':'なし'}</span></div><div class="sign-vector">${c.signs.map(x=>x>0?'+':'−').join('')}</div><p class="note">符号は左の方程式の H1, …, H${data.n} の順。C0 が F⁰ を含み、C1, … は flag に沿う順です。</p>`;}
 function tableMatrix(M,rows,cols,matrix,clickable=true){if(!rows.length||!cols.length)return '<p class="note">この次数の行列は空です。</p>';return `<div class="matrix-wrap"><table class="matrix-table"><thead><tr><th></th>${cols.map(c=>`<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>${M.map((r,i)=>`<tr><th>${esc(rows[i])}</th>${r.map((v,j)=>`<td class="${v==='0'?'zero':'nonzero'} ${clickable?'entry':''}" ${clickable?`data-entry="${matrix},${i},${j}" tabindex="0" role="button" aria-label="${esc(rows[i])}, ${esc(cols[j])}: ${esc(v)}"`:''}>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;}
 function exactTag(exact=true){return `<span class="tag ${exact?'':'numeric'}">${exact?'EXACT · 正確計算':'NUMERIC · 近似計算'}</span>`;}
@@ -175,6 +176,28 @@ function cancelGesture(){
   if(lineGesture){const old=lineGesture;lineGesture=null;if(old.type==='pivot'&&rotationTarget)rotationTarget.pivot=old.pivot;releasePointer(old.pointerId);}
   if(panStart){releasePointer(panStart.pointerId);panStart=null;}
 }
+let pinchBefore=null;
+const stagePinch=attachPinchZoom($('#stage'),{
+  onStart(){
+    const before=panStart?.before;
+    cancelGesture();
+    pinchBefore=before||snapshot();
+    pointer=null;skipClick=true;
+    renderCanvas();renderInspector();
+  },
+  onMove({scale,from,to}){
+    const anchor=eventCoordinates(from).world;
+    const width=Math.max(1e-4,Math.min(1e6,view.w/scale)),ratio=width/view.w;
+    view.w=width;view.h*=ratio;
+    const next=eventCoordinates(to).world;
+    view.cx+=anchor[0]-next[0];view.cy+=anchor[1]-next[1];
+    renderCanvas();
+  },
+  onEnd(){
+    if(pinchBefore!==null){recordEdit(pinchBefore);pinchBefore=null;}
+    skipClick=false;persist();
+  }
+});
 $('#stage').addEventListener('pointerdown',e=>{
   if(e.button!==0)return;skipClick=false;
   if(state.mode==='select'){panStart={before:snapshot(),x:e.clientX,y:e.clientY,cx:view.cx,cy:view.cy,moved:false,pointerId:e.pointerId};$('#stage').focus({preventScroll:true});return;}
@@ -220,7 +243,7 @@ $('#stage').addEventListener('click',e=>{
   if(String(drawStart)===String(p)){toast('異なる 2 点を選んでください');return;}
   try{const l=lineThrough(drawStart,p);if(state.mode==='flag')change(()=>state.flag=l.map(String));else change(()=>{state.lines=[...state.lines,l.map(String)];state.flag=null;state.preset='custom';state.name='オリジナル配置';},false);drawStart=null;renderCanvas();}catch(e){toast(e.message);}
 });
-$('#stage').addEventListener('wheel',e=>{e.preventDefault();if(lineGesture)return;const r=e.deltaY>0?1.15:1/1.15;view.w*=r;view.h*=r;renderCanvas();},{passive:false});
+$('#stage').addEventListener('wheel',e=>{e.preventDefault();if(lineGesture||stagePinch.active)return;const r=e.deltaY>0?1.15:1/1.15;view.w*=r;view.h*=r;renderCanvas();},{passive:false});
 $('#stage').addEventListener('keydown',e=>{
   if(!['rotate-line','line-select'].includes(state.mode))return;
   const hit=e.target.closest('[data-line-index]'),vertex=e.target.closest('[data-pivot-vertex]');
@@ -232,7 +255,7 @@ document.addEventListener('keydown',e=>{
   const typing=e.target.closest('input,textarea,select,[contenteditable="true"]');
   if(!typing&&!$('#help').open&&(e.ctrlKey||e.metaKey)&&!e.altKey){const key=e.key.toLowerCase();if(key==='z'||key==='y'){e.preventDefault();travelHistory(key==='y'||e.shiftKey?'redo':'undo');return;}}
   if(!typing&&e.target.closest('#stage')&&['Delete','Backspace'].includes(e.key)&&rotationTarget){e.preventDefault();deleteSelectedLine();return;}
-  if(e.key==='Escape'){cancelGesture();drawStart=null;pointer=null;skipClick=true;renderCanvas();renderInspector();}
+  if(e.key==='Escape'){stagePinch.cancel();cancelGesture();drawStart=null;pointer=null;skipClick=true;renderCanvas();renderInspector();}
 });
 $$('.analysis-tabs button').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));
 $('#save-project').onclick=()=>download('chamber-lab-arrangement.json',JSON.stringify({...state,geometryField:data.geometryField,source:'Chamber Lab v0.8',convention:'n affine lines plus line at infinity for Milnor fiber'},null,2),'application/json');

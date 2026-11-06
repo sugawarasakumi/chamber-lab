@@ -4,6 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node test.mjs && node test-quadratic.mjs && node test-real-number-fields.mjs && node test-overview.mjs && node test-multinets.mjs && node test-alexander.mjs && node test-special-arrangements.mjs && python3 test-extended-catalogue.py && node test-face-poset.mjs && node test-magnitude.mjs && node test-net-jumping.mjs && node test-fundamental-group.mjs && node test-jump-ideals.mjs && node test-rotation.mjs && node test-editing.mjs && node test-intersection-poset.mjs && node test-plinth.mjs"
+    "test": "node test.mjs && node test-quadratic.mjs && node test-real-number-fields.mjs && node test-overview.mjs && node test-multinets.mjs && node test-alexander.mjs && node test-special-arrangements.mjs && python3 test-extended-catalogue.py && node test-face-poset.mjs && node test-magnitude.mjs && node test-net-jumping.mjs && node test-fundamental-group.mjs && node test-jump-ideals.mjs && node test-rotation.mjs && node test-editing.mjs && node test-intersection-poset.mjs && node test-plinth.mjs && node test-pinch.mjs"
   }
 }

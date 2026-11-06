@@ -18,12 +18,18 @@ export function plotBounds(base,polygon,F,chartLine,fitAll=false,includePivots=f
   const lines=polygon?.lines||base.lines.map(l=>l.map(x=>F.from(x))),chart=deconeProjective(lines,Math.min(chartLine,lines.length-1),F),focus=polygon?.corners&&!fitAll?[...polygon.corners,...(includePivots?polygon.pivots:[])]:(polygon?.points||base.points).map(p=>p.p.map(x=>F.from(x))),points=focus.map(p=>numericPoint(p,chart,F)).filter(p=>p&&p.every(Number.isFinite));
   if(points.length<2)points.push([-2,-2],[2,2]);const xs=points.map(p=>p[0]),ys=points.map(p=>p[1]),minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);return {minX,maxX,minY,maxY};
 }
+export function plotView(base,polygon,F,model,bounds=null){
+  const lines=polygon?.lines||base.lines,index=Math.min(Number(model.chartLine)||0,lines.length-1),b=bounds||plotBounds(base,polygon,F,index,model.fitAll,model.fitPivots),width=900,height=460;
+  let w=(b.maxX-b.minX||1)*1.8,h=(b.maxY-b.minY||.7)*1.8;if(w/h<width/height)w=h*width/height;else h=w*height/width;
+  const zoom=Math.max(.25,Math.min(5,Number(model.plotZoom)||1)),pan=Array.isArray(model.plotPan)?model.plotPan:[0,0];
+  return {cx:(b.maxX+b.minX)/2+(Number(pan[0])||0),cy:(b.maxY+b.minY)/2+(Number(pan[1])||0),w:w/zoom,h:h/zoom,angle:0};
+}
 export function polygonSVG(base,plinth,polygon,F,model,{bounds=null,small=false}={}){
   const n=base.lines.length,lines=polygon?.lines||base.lines.map(l=>l.map(x=>F.from(x))),real=realArrangement(lines,F);
   const staticSVG=svg=>small?svg.replace(/ data-pl-(?:base-line|point)="[^"]*"/g,'').replace(/ role="button" tabindex="0"/g,''):svg;
   if(!real)return staticSVG(polygon?.corners?`${polygonSchematic(plinth,polygon,model)}<details class="pl-incidence-details" ${model.incidenceOpen?'open':''}><summary>基礎配置を含む incidence graph を開く・図から選ぶ</summary>${incidenceSVG(base,plinth,polygon,F,model)}</details>`:incidenceSVG(base,plinth,polygon,F,model));
-  const trace=constructionStep(plinth,polygon,model),width=900,height=460,index=Math.min(Number(model.chartLine)||0,lines.length-1),chart=deconeProjective(lines,index,F),b=bounds||plotBounds(base,polygon,F,index,model.fitAll,model.fitPivots);let w=(b.maxX-b.minX||1)*1.8,h=(b.maxY-b.minY||.7)*1.8;if(w/h<width/height)w=h*width/height;else h=w*height/width;
-  const zoom=model.plotZoom||1,view={cx:(b.maxX+b.minX)/2,cy:(b.maxY+b.minY)/2,w:w/zoom,h:h/zoom,angle:0},project=p=>projectPoint(p,view,width,height),colors=['#c39443','#a97a35','#d1aa62','#977534','#c0a573','#986e44','#b68d61','#8a683e'],sourceColor='#167f78',pivotColor='#b47c22',targetColor='#bd426e',at=p=>{const q=numericPoint(p,chart,F);return q?project(q):null;},inside=p=>p&&p[0]>=24&&p[0]<=width-24&&p[1]>=45&&p[1]<=height-28;let out='';
+  const trace=constructionStep(plinth,polygon,model),width=900,height=460,index=Math.min(Number(model.chartLine)||0,lines.length-1),chart=deconeProjective(lines,index,F);
+  const view=plotView(base,polygon,F,model,bounds),project=p=>projectPoint(p,view,width,height),colors=['#c39443','#a97a35','#d1aa62','#977534','#c0a573','#986e44','#b68d61','#8a683e'],sourceColor='#167f78',pivotColor='#b47c22',targetColor='#bd426e',at=p=>{const q=numericPoint(p,chart,F);return q?project(q):null;},inside=p=>p&&p[0]>=24&&p[0]<=width-24&&p[1]>=45&&p[1]<=height-28;let out='';
   const labels=[];
   function label(p,name,color){
     const tw=Math.min(290,name.length*8+12),th=21,candidates=[[13,-16],[13,28],[-tw-13,-16],[-tw-13,28],[13,-38],[-tw-13,-38]];
@@ -77,7 +83,7 @@ export function polygonSVG(base,plinth,polygon,F,model,{bounds=null,small=false}
   out+=`<rect x="12" y="10" width="${Math.min(600,headline.length*11+24)}" height="31" rx="5" fill="#f9fcf7" fill-opacity=".95"/><text x="24" y="31" class="pl-trace-label" fill="${trace.closure==='open'?'#805493':sourceColor}" pointer-events="none">${esc(headline)}</text>`;
   out+=`<text x="15" y="${height-15}" class="pl-plot-caption">${lName(index,n)} を無限遠にする実 affine chart · 作図のみ数値近似</text>`;
   const infiniteCorners=polygon?.corners?.some(p=>!numericPoint(p,chart,F));
-  return staticSVG(`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Splitting polygon の実直線図・作図 ${trace.stage} / ${trace.r}">${out}</svg>${infiniteCorners&&!small?`<p class="pl-chart-note">この chart では無限遠の corner があるため、下の模式図でも接続を示します。</p>${polygonSchematic(plinth,polygon,model)}`:''}`);
+  return staticSVG(`<svg data-pl-plot="real" viewBox="0 0 ${width} ${height}" role="img" aria-label="Splitting polygon の実直線図・作図 ${trace.stage} / ${trace.r}">${out}</svg>${infiniteCorners&&!small?`<p class="pl-chart-note">この chart では無限遠の corner があるため、下の模式図でも接続を示します。</p>${polygonSchematic(plinth,polygon,model)}`:''}`);
 }
 function polygonSchematic(plinth,polygon,model){
   const trace=constructionStep(plinth,polygon,model),{r,stage}=trace,width=900,height=360,closed=polygon.closed,span=closed?2*Math.PI:2*Math.PI-.7,positions=Array.from({length:r+1},(_,i)=>{const a=-Math.PI/2+i*span/r;return [420+210*Math.cos(a),173+105*Math.sin(a)];});if(closed)positions[r]=positions[0];
@@ -93,7 +99,7 @@ function polygonSchematic(plinth,polygon,model){
     out+=`<g data-pl-corner-marker="${i}">${i===0?`<circle cx="${p[0]}" cy="${p[1]}" r="12" fill="#f1fbf6" stroke="#167f78" stroke-width="2"/>`:''}${target||combined?`<path d="M${p[0]},${p[1]-7} l7,7 l-7,7 l-7,-7 Z" fill="#ffe9f0" stroke="#bd426e" stroke-width="2"/>`:`<circle cx="${p[0]}" cy="${p[1]}" r="6" fill="#f1fbf6" stroke="${color}" stroke-width="2"/>`}<text x="${p[0]+15}" y="${p[1]+(below?24:-14)}" class="pl-trace-label" fill="${color}">${esc(name)}</text><text x="${p[0]+15}" y="${p[1]+(below?40:-30)}" class="pl-line-label" fill="#a38749">∈ S${i===r?1:i+1}</text></g>`;
   });
   out+=`<text x="18" y="27" class="pl-trace-label" fill="#537e70">${trace.closure==='closed'&&polygon.valid?'✓ splitting polygon':trace.closure==='open'?'Q1 ≠ R₁ · 閉じていません':'corner・追加直線・pivot の接続をたどる'}</text><text x="18" y="${height-15}" class="pl-plot-caption">接続の模式図 · Pᵢ は Eᵢ 上の pivot · 実平面の座標・距離を表す図ではありません</text>`;
-  return `<svg class="pl-polygon-schematic" viewBox="0 0 ${width} ${height}" role="img" aria-label="Splitting polygon の接続の模式図・作図 ${stage} / ${r}">${out}</svg>`;
+  return `<svg data-pl-plot="schematic" class="pl-polygon-schematic" viewBox="0 0 ${width} ${height}" role="img" aria-label="Splitting polygon の接続の模式図・作図 ${stage} / ${r}">${out}</svg>`;
 }
 function incidenceSVG(base,plinth,polygon,F,model){
   const n=base.lines.length,lines=polygon?.lines||base.lines,stage=model.stage??plinth?.r??0,points=(polygon?.points||base.points).filter(p=>model.allPoints||p.lines.length>=3),count=Math.max(lines.length,points.length),height=Math.max(420,70+count*23),width=900,lpos=lines.map((_,i)=>[180,35+(i+.5)/lines.length*(height-70)]),ppos=points.map((_,i)=>[650,35+(i+.5)/Math.max(1,points.length)*(height-70)]);let out='';
@@ -101,7 +107,7 @@ function incidenceSVG(base,plinth,polygon,F,model){
   lines.forEach((_,i)=>{if(i>=n&&i-n>=stage)return;const [x,y]=lpos[i],support=plinth?.support.indexOf(i)??model.support.indexOf(i);out+=`<g ${i<n?`data-pl-base-line="${i}" role="button" tabindex="0"`:''} class="pl-inc-node"><circle cx="${x}" cy="${y}" r="6" fill="${i>=n?'#bd5574':support>=0?'#bd9140':'#6e9688'}"/><text x="${x-15}" y="${y+4}" text-anchor="end">${lName(i,n)}${support>=0?' / S'+(support+1):''}</text></g>`;});
   points.forEach((p,j)=>{const [x,y]=ppos[j],baseIndex=base.points.findIndex(v=>v.lines.every(i=>p.lines.includes(i))),pivot=plinth?.pivots.findIndex(v=>v.lines.every(i=>p.lines.includes(i)))??-1;out+=`<g class="pl-inc-node" ${baseIndex>=0?`data-pl-point="${baseIndex}" role="button" tabindex="0"`:''}><title>{${p.lines.map(i=>lName(i,n)).join(', ')}}</title><circle cx="${x}" cy="${y}" r="${pivot>=0?7:5}" fill="${pivot>=0?'#c39b4c':'#d5d7c2'}"/><text x="${x+13}" y="${y+4}">${pivot>=0?'P'+(pivot+1)+' · ':''}{${p.lines.map(i=>lName(i,n)).join(', ')}}</text></g>`;});
   out+=`<text x="25" y="${height-12}" class="pl-plot-caption">複素配置の incidence graph · ${model.allPoints?'全交点':'重複度3以上'}と全直線 · 実平面の直線図ではありません</text>`;
-  return `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="複素配置の incidence graph">${out}</svg>`;
+  return `<svg data-pl-plot="incidence" viewBox="0 0 ${width} ${height}" role="img" aria-label="複素配置の incidence graph">${out}</svg>`;
 }
 
 export function sageExportPlinth(result){
