@@ -1,0 +1,104 @@
+.vg-panel h3 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.vg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.vg-card {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fafcf8;
+}
+
+.vg-card .note {
+  margin: 3px 0 8px;
+}
+
+.vg-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+}
+
+.vg-expression {
+  margin: 5px 0;
+  font: 12px/1.75 var(--mono);
+  overflow-wrap: anywhere;
+}
+
+.vg-term {
+  display: inline-block;
+}
+
+.vg-relations {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vg-relations li {
+  padding: 4px 0 6px;
+  border-top: 1px solid var(--line);
+}
+
+.vg-relations li small,
+.vg-page-controls,
+.vg-ranks {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.vg-page-controls,
+.vg-ranks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.vg-page-controls[hidden] {
+  display: none;
+}
+
+.vg-ranks b {
+  color: var(--ink);
+}
+
+.vg-table {
+  margin-top: 10px;
+  overflow-x: auto;
+}
+
+.vg-table .table {
+  margin: 0;
+}
+
+.vg-controls label,
+.vg-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: fit-content;
+  max-width: 100%;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.vg-panel select {
+  max-width: 100%;
+}
+
+@media (max-width: 760px) {
+  .vg-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

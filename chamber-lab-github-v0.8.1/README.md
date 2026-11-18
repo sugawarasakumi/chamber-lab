@@ -16,6 +16,13 @@
 1. Chamber Lab の既定の A₃ 配置で、flag と chamber の対応を見ます。Milnor fiber の Betti 数は (1, 7, 18) です。
 2. B₃ の Milnor fiber では、Euler 数が 1 − 8 + 79 = 72 になることを確認できます。
 3. Plinth Lab で「有理 pair · 13直線」を選び、「次へ」で3辺を順に引きます。λ=3/2 または 2/5 で Q₁=R₁ となり、「nonsplitting の例」では閉じません。
+4. Chamber Lab の「VG 環」で、既定の A₃ 配置の affine と cone を切り替えます。整数係数の多項式剰余表示を見比べ、NBC 基底を二つ選んで積を確認できます。
+
+## Varchenko–Gelfand 環の規約
+
+生成元 $x_i$ は配置の超平面 $H_i$ の正側で 1、負側で 0 となる Heaviside 関数です。filtered 環は chamber 上の整数値関数環をこれらの生成元の全次数でフィルター付けしたものです。associated graded 環はその次数ごとの商で、積は filtered 積のうち二つの入力次数の和に当たる成分です。
+
+cone には無限遠超平面 $H_\infty=\{z=0\}$ を加え、NBC の順序は $H_\infty<H_1<\cdots<H_n$ とします。affine では $z>0$ の側を選び、関係式に $x_\infty=1$ を代入してから最高次部分を取ります。chamber 指示関数と NBC 単項式の相互変換は filtered 環で行います。
 
 ## 結果の読み方と計算範囲
 
