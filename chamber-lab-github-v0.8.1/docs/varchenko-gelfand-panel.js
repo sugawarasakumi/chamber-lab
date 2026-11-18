@@ -36,6 +36,28 @@ function polynomialHTML(labels,terms,symbol){
     : `${variableHTML(labels[square],symbol)}<sup>2</sup>`);
 }
 
+const indicatorHTML=({id})=>`δ<sub>${esc(id)}</sub>`;
+
+function indicatorExpansionHTML(model,chamber){
+  return `${indicatorHTML(chamber)} = ${polynomialHTML(model.labels,model.toNBC(chamber.mask),'x')}`;
+}
+
+export function chamberVGInspectorHTML(data,chamberId){
+  let result;
+  try{
+    const model=modelFor(data,'affine');
+    const chamber=model.chambers.find(chamber=>chamber.id===chamberId);
+    result=`<p class="vg-expression" id="vg-chamber-indicator">${indicatorExpansionHTML(model,chamber)}</p>`;
+  }catch(error){
+    result=`<p class="note">NBC 展開を表示できませんでした。${esc(error.message)}</p>`;
+  }
+  return `<section class="vg-inspector" aria-labelledby="vg-inspector-title">
+    <h3 id="vg-inspector-title">VG 環の指示関数 · NBC 基底</h3>
+    ${result}
+    <p class="note">Affine の filtered 環（整数係数）。x<sub>i</sub> は H<sub>i</sub> の正側の指示関数です。</p>
+  </section>`;
+}
+
 function pageControls(){
   return `<div class="vg-page-controls" hidden>
     <button type="button" class="quiet small" data-vg-previous>前へ</button>
@@ -150,16 +172,15 @@ function bindOutput(container,model){
   showProduct();
 
   const chamberByMask=new Map(chambers.map(chamber=>[chamber.mask,chamber]));
-  const indicator=mask=>`δ<sub>${esc(chamberByMask.get(mask).id)}</sub>`;
   const forward=find('#vg-forward'),backward=find('#vg-backward');
   const forwardResult=find('#vg-forward-result'),backwardResult=find('#vg-backward-result');
   function showForward(){
     const mask=Number(forward.value);
-    forwardResult.innerHTML=`${monomialHTML(labels,mask,'x')} = ${sumHTML(model.toChambers(mask),term=>indicator(term.mask))}`;
+    forwardResult.innerHTML=`${monomialHTML(labels,mask,'x')} = ${sumHTML(model.toChambers(mask),term=>indicatorHTML(chamberByMask.get(term.mask)))}`;
   }
   function showBackward(){
     const mask=Number(backward.value);
-    backwardResult.innerHTML=`${indicator(mask)} = ${polynomialHTML(labels,model.toNBC(mask),'x')}`;
+    backwardResult.innerHTML=indicatorExpansionHTML(model,chamberByMask.get(mask));
   }
   forward.onchange=showForward;
   backward.onchange=showBackward;

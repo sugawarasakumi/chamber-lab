@@ -28,6 +28,18 @@
   border-top: 1px solid var(--line);
 }
 
+.vg-inspector {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.vg-inspector h3 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .vg-expression {
   margin: 5px 0;
   font: 12px/1.75 var(--mono);
