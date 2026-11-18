@@ -254,9 +254,21 @@ export function varchenkoGelfand(data, mode = 'affine') {
     return basisTerms(terms);
   }
 
+  function indicatorGrading(mask) {
+    const terms = toNBC(mask);
+    const components = Array.from({length: rank + 1}, () => []);
+    let filtrationDegree = 0;
+    for (const term of terms) {
+      const d = degree(term.mask);
+      components[d].push(term);
+      filtrationDegree = Math.max(filtrationDegree, d);
+    }
+    return {terms, filtrationDegree, components: components.slice(0, filtrationDegree + 1)};
+  }
+
   const result = {
     mode, labels, order, chambers, basis, hilbert,
-    filteredRelations: filtered, gradedRelations: graded, product, toChambers, toNBC
+    filteredRelations: filtered, gradedRelations: graded, product, toChambers, toNBC, indicatorGrading
   };
   cached.set(mode, result);
   return result;

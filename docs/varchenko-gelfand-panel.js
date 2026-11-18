@@ -37,9 +37,23 @@ function polynomialHTML(labels,terms,symbol){
 }
 
 const indicatorHTML=({id})=>`δ<sub>${esc(id)}</sub>`;
+const gradedClassHTML=(expression,degree)=>`[${expression}]<sub>${degree}</sub>`;
 
-function indicatorExpansionHTML(model,chamber){
-  return `${indicatorHTML(chamber)} = ${polynomialHTML(model.labels,model.toNBC(chamber.mask),'x')}`;
+function indicatorExpansionHTML(model,chamber,filteredId,gradedId){
+  const {terms,filtrationDegree,components}=model.indicatorGrading(chamber.mask);
+  const indicator=indicatorHTML(chamber);
+  const rows=components.map((piece,degree)=>{
+    const principal=degree===filtrationDegree;
+    const polynomial=polynomialHTML(model.labels,piece,'u');
+    return `<div data-vg-degree="${degree}"${principal?' data-vg-principal':''}>
+      <dt>次数 ${degree}${principal?' · 最高次の像':''}</dt>
+      <dd class="vg-expression">${principal?`${gradedClassHTML(indicator,degree)} = `:''}${polynomial}</dd>
+    </div>`;
+  }).join('');
+  return `<p class="vg-conversion-label">Filtered</p>
+    <p class="vg-expression" id="${filteredId}">${indicator} = ${polynomialHTML(model.labels,terms,'x')}</p>
+    <p class="vg-conversion-label">Graded · NBC 展開の次数別成分</p>
+    <dl class="vg-degree-list" id="${gradedId}">${rows}</dl>`;
 }
 
 export function chamberVGInspectorHTML(data,chamberId){
@@ -47,14 +61,14 @@ export function chamberVGInspectorHTML(data,chamberId){
   try{
     const model=modelFor(data,'affine');
     const chamber=model.chambers.find(chamber=>chamber.id===chamberId);
-    result=`<p class="vg-expression" id="vg-chamber-indicator">${indicatorExpansionHTML(model,chamber)}</p>`;
+    result=indicatorExpansionHTML(model,chamber,'vg-chamber-indicator','vg-chamber-graded');
   }catch(error){
     result=`<p class="note">NBC 展開を表示できませんでした。${esc(error.message)}</p>`;
   }
   return `<section class="vg-inspector" aria-labelledby="vg-inspector-title">
     <h3 id="vg-inspector-title">VG 環の指示関数 · NBC 基底</h3>
     ${result}
-    <p class="note">Affine の filtered 環（整数係数）。x<sub>i</sub> は H<sub>i</sub> の正側の指示関数です。</p>
+    <p class="note">Affine 配置・整数係数。x<sub>i</sub> は H<sub>i</sub> の正側の指示関数、u<sub>i</sub> はその次数 1 の像です。</p>
   </section>`;
 }
 
@@ -136,16 +150,17 @@ function outputHTML(model){
       <div id="vg-product" class="vg-grid" aria-live="polite"></div>
     </section>
     <section class="vg-section">
-      <h3>Chamber 指示関数と NBC 基底の基底変換</h3>
+      <h3>Chamber 指示関数と NBC 基底</h3>
       <p class="note">Filtered 環で δ<sub>C</sub> は chamber C で 1、他の chamber で 0。符号は ${signsHTML} の順です。${cone?' ⁺ と ⁻ は z の符号を表します。':''}</p>
+      <p class="note">[f]<sub>d</sub> は f の F<sub>d</sub>/F<sub>d−1</sub> での像です。指示関数の和は、和全体を次数 d の商に写します。</p>
       <div class="vg-grid">
         <div class="vg-card">
           <label>NBC → chamber 指示関数<select id="vg-forward">${basisOptions}</select></label>
-          <div id="vg-forward-result" class="vg-expression" aria-live="polite"></div>
+          <div id="vg-forward-expansions" aria-live="polite"></div>
         </div>
         <div class="vg-card">
           <label>Chamber 指示関数 → NBC<select id="vg-backward">${chamberOptions}</select></label>
-          <div id="vg-backward-result" class="vg-expression" aria-live="polite"></div>
+          <div id="vg-backward-expansions" aria-live="polite"></div>
         </div>
       </div>
     </section>`;
@@ -172,15 +187,21 @@ function bindOutput(container,model){
   showProduct();
 
   const chamberByMask=new Map(chambers.map(chamber=>[chamber.mask,chamber]));
+  const basisByMask=new Map(basis.map(term=>[term.mask,term]));
   const forward=find('#vg-forward'),backward=find('#vg-backward');
-  const forwardResult=find('#vg-forward-result'),backwardResult=find('#vg-backward-result');
+  const forwardResult=find('#vg-forward-expansions'),backwardResult=find('#vg-backward-expansions');
   function showForward(){
     const mask=Number(forward.value);
-    forwardResult.innerHTML=`${monomialHTML(labels,mask,'x')} = ${sumHTML(model.toChambers(mask),term=>indicatorHTML(chamberByMask.get(term.mask)))}`;
+    const {degree}=basisByMask.get(mask);
+    const indicators=sumHTML(model.toChambers(mask),term=>indicatorHTML(chamberByMask.get(term.mask)));
+    forwardResult.innerHTML=`<p class="vg-conversion-label">Filtered</p>
+      <p class="vg-expression" id="vg-forward-result">${monomialHTML(labels,mask,'x')} = ${indicators}</p>
+      <p class="vg-conversion-label">Graded · 次数 ${degree}</p>
+      <p class="vg-expression" id="vg-forward-graded">${monomialHTML(labels,mask,'u')} = ${gradedClassHTML(indicators,degree)}</p>`;
   }
   function showBackward(){
     const mask=Number(backward.value);
-    backwardResult.innerHTML=indicatorExpansionHTML(model,chamberByMask.get(mask));
+    backwardResult.innerHTML=indicatorExpansionHTML(model,chamberByMask.get(mask),'vg-backward-result','vg-backward-graded');
   }
   forward.onchange=showForward;
   backward.onchange=showBackward;

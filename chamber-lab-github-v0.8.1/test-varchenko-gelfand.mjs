@@ -131,6 +131,12 @@ function checkProductsAndBasisChange(vg, label) {
   for (const chamber of vg.chambers) {
     const expansion = vg.toNBC(chamber.mask);
     assert(expansion.every(term => degreeByMask.has(term.mask) && typeof term.coefficient === 'bigint'), label);
+    const {terms, filtrationDegree, components} = vg.indicatorGrading(chamber.mask);
+    const topDegree = Math.max(...expansion.map(term => degreeByMask.get(term.mask)));
+    assert.equal(filtrationDegree, topDegree, label);
+    assert.deepEqual(terms, expansion, label);
+    assert.deepEqual(components, Array.from({length: topDegree + 1}, (_, degree) =>
+      expansion.filter(term => degreeByMask.get(term.mask) === degree)), label);
     for (const target of vg.chambers) {
       assert.equal(evaluate(expansion, target.mask), target.mask === chamber.mask ? 1n : 0n, label);
     }
@@ -179,6 +185,12 @@ for (const {name, lines, hilbert} of fixtures) {
   }
 }
 
+const single = varchenkoGelfand(arrangement([[1, 0, 0]]));
+const [negative, positive] = [0, 1].map(mask => single.indicatorGrading(mask));
+assert.deepEqual(negative.components.map(piece => coefficients(piece)), [{0: 1n}, {1: -1n}]);
+assert.deepEqual(positive.components.map(piece => coefficients(piece)), [{}, {1: 1n}]);
+assert.deepEqual(single.toChambers(0), [{mask: 0, coefficient: 1n}, {mask: 1, coefficient: 1n}]);
+
 const parallel = varchenkoGelfand(arrangement(fixtures.find(f => f.name === 'parallel').lines));
 assert.deepEqual(coefficients(parallel.product(1, 2, 'filtered')), {2: 1n});
 assert.deepEqual(parallel.product(1, 2, 'graded'), []);
@@ -200,4 +212,4 @@ for (const mode of ['affine', 'cone']) {
   }
 }
 
-console.log('Varchenko–Gelfand: exact affine/cone presentations, independently derived NBC bases, integral products and chamber basis changes on nine fixtures, and flag independence passed.');
+console.log('Varchenko–Gelfand: exact affine/cone presentations, NBC bases, integral products, chamber expansions and their degree components, and flag independence passed.');

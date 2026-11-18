@@ -40,6 +40,26 @@
   font-weight: 600;
 }
 
+.vg-conversion-label {
+  margin: 9px 0 0;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.vg-degree-list {
+  margin: 5px 0;
+}
+
+.vg-degree-list dt {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.vg-degree-list dd {
+  margin: 0 0 4px;
+}
+
 .vg-expression {
   margin: 5px 0;
   font: 12px/1.75 var(--mono);
